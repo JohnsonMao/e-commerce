@@ -1,0 +1,29 @@
+.footer{
+    background: $primary;
+    h2{
+        padding-top: 21px;
+        padding-bottom: 21px;
+    }
+    span{
+        font-size: 14px;
+        margin-left: 20px;
+    }
+    &Menu{
+        @include mobile(){
+            display: none;
+        }
+        a{
+            padding: 21px 18px;
+            color: $light;
+            &::after{
+                bottom: 18px;
+                background: $light;
+            }
+            &:hover{
+                &::after{
+                    width: calc(100% - 36px);
+                }
+            }
+        }
+    }
+}

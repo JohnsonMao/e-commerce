@@ -1,0 +1,67 @@
+.shop{
+    display: flex;
+    flex-wrap: wrap;
+    .card{
+        background: $light;
+        margin-bottom: 58px;
+            
+        &:hover{
+            transform: scale(1.05);
+            padding: 3px;
+            margin-bottom: -6px;
+            box-shadow: 5px 5px 15px rgba(#000, 0.6);
+            z-index: 1;
+        }
+        .card-img{
+            height: calc(100vw * 1 / 4);
+            max-height: 255px;
+            min-height: 165px;
+            cursor: pointer;
+        }
+        .card-body{
+            h2{
+                font-weight: bold;
+                @include mobile(){
+                    font-size: $h5-font-size;
+                }
+            }
+        }
+    }
+}
+
+.shop-page{
+    display: flex;
+    justify-content: center;
+    a{
+        color: $dark;
+        font-size: $h5-font-size;
+        padding-right: 10px;
+        padding-left: 10px;
+        position: relative;
+        &::after{
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 8px;
+            width: 0;
+            height: 2px;
+            background: $dark;
+            transition: width .2s ease-in-out;
+        }
+
+        &:hover{
+            &::after{
+                content: '';
+                width: calc(100% - 16px);
+            }
+        }
+        &.active{
+            color: $secondary;
+            &::after{
+            content: '';
+            background: $secondary;
+            width: calc(100% - 16px);
+            }
+        }
+    }
+}

@@ -1,0 +1,38 @@
+.banner{
+    background: url($banner-img) no-repeat center;
+    background-size: cover;
+    max-width: 100vw;
+    max-height: calc(100vh - 56px);
+    overflow: hidden;
+    display: block;
+
+    >div{
+        height: 100vh;
+    }
+    &-text{
+        max-width: 445px;
+        h2{
+            text-shadow: 0.5px 0.5px 1px #000;
+        }
+        p{
+            margin-bottom: 16px;
+            text-shadow: 0.5px 0.5px 1px #000;
+        }
+        .btn{
+            padding: 0;
+            width: 100%;
+            max-width: 350px;
+            font-size: $h3-font-size;
+            border: 2px solid $light;
+            line-height: 60px;
+            border-radius: 30px;
+            text-shadow: 0.1px 0.1px 1px #000;
+        }
+        .btn-outline-light{
+            &:hover{
+                background: rgba($color: $light, $alpha: 0.1);
+                color: $light;
+            }
+        }
+    }
+}

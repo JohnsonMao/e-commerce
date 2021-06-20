@@ -1,0 +1,117 @@
+*, *::before, *::after{
+    box-sizing: border-box;
+}
+body{
+    font-family: $font-family;
+}
+
+// 結構
+nav{
+    margin-bottom: 80px;
+    @include mobile(){
+        margin-bottom: 40px;
+    }
+}
+section{
+    margin-bottom: 60px;
+    @include pad(){
+        margin-bottom: 50px;
+    }
+    @include mobile(){
+        margin-bottom: 40px;   
+    }
+}
+p{
+    margin-bottom: 16px;
+    @include pad(){
+        margin-bottom: 12px;
+    }
+    @include mobile(){
+        margin-bottom: 8px;
+    }
+}
+a{
+    text-decoration: none;
+}
+ol{
+    list-style: decimal;
+    list-style-position: inside;
+    li::marker{
+        font-size: $h4-font-size;
+        font-weight: bold;
+    }
+}
+
+// 樣式
+.bg-dark{
+    background: $bg-dark;
+}
+.bg-primary{
+    background: $primary;
+}
+.more{
+    font-size: $h6-font-size;
+    color: $secondary;
+    display: inline-block;
+    position: relative;
+    &::after{
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 0;
+        height: 2px;
+        background: $secondary;
+        transition: width .2s ease-in-out;
+    }
+    &:hover{
+        &::after{
+            content: '';
+            width: 100%;
+        }
+    }
+}        
+.h1{
+    font-size: calc(1.75rem + 1.08vw);
+
+    @media (min-width: $desktop-width) {
+        font-size: $h1-font-size;
+    }
+}
+.h4{
+    font-size: calc(1.15rem + 0.54vw);
+
+    @media (min-width: $desktop-width) {
+        font-size: $h4-font-size;
+    }
+}
+.text-light{
+    color: $light;
+}
+.logo {
+    a{
+        display: block;
+        width: 128px;
+        height: 38px;
+    }
+}
+.header{
+    .logo{
+        a{
+            background: url($logo) no-repeat;
+        }
+    }
+}
+.footer{
+    .logo{
+        a{
+            background: url($logo-white) no-repeat;
+        }
+    }
+}
+.mb-2{
+    margin-bottom: 0.5rem;
+}
+.mb-4{
+    margin-bottom: 1.25rem;
+}

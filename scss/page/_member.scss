@@ -1,0 +1,194 @@
+.member{
+    h2{
+        font-size: $h5-font-size;
+        margin-bottom: 28px;
+        color: $member-menu;
+        font-weight: normal;
+        @include mobile(){
+            display: none;
+        }
+    }
+    &Menu{
+        flex-direction: column;
+        justify-content: space-between;
+        margin-bottom: 40px;
+        @include mobile(){
+            flex-direction: row;
+        }
+        li{
+            margin-bottom: 24px;
+            a{
+                font-size: $h6-font-size;
+                color: $member-menu;
+                display: inline-block;
+                &::after{
+                    left: 0;
+                    bottom: -2px;
+                    background: $primary;
+                }
+                &:hover{
+                    &::after{
+                        width: 100%;
+                    }
+                }
+            }
+            &.active a::after{
+                width: 100%;
+            }
+        }
+    }
+    &Num{
+        order: 1;
+        margin-bottom: 40px;
+        min-width: 282px;
+        @include pad(){
+            order: 0;
+            width: calc(100% / 12 * 9);
+        }
+        @include mobile(){
+            width: 100%;
+        }
+        h3{
+            display: flex;
+            align-items: center;
+            font-size: $h6-font-size;
+            color: $info-text;
+            font-weight: normal;
+            margin-bottom: 8px;
+        }
+        i{
+            color: $dark;
+        }
+        span{
+            font-size: $h5-font-size;
+            color: $font-gray;
+            margin-left: 6px;
+        }
+        th, td{
+            color: $info-text;
+            font-weight: normal;
+            text-align: left;
+            width: 95px;
+            padding-top: 16px;
+        }
+        p{
+            font-size: 14px;
+            color: $member-prompt;
+        }
+    }
+    &Modify{
+        width: calc(100% / 12 * 7 - 5vw);
+        @include pad(){
+            margin-left: calc(100% / 12 * 3);
+            width: calc(100% / 12 * 9);
+        }
+        @include mobile(){
+            margin-left: 0;
+            width: 100%;
+        }
+        h3{
+            font-size: $h6-font-size;
+            color: $dark;
+            padding-bottom: 8px;
+            margin-bottom: 16px;
+            border-bottom: 1px solid $info-text;
+        }
+        label{
+            margin-bottom: 36px;
+            color: $info-text;
+        }
+        .receive * {
+            display: inline-block;
+            cursor: pointer;
+        }
+        input{
+            padding:7px 10px;
+            width: 100%;
+            margin-bottom: 16px;
+            border: 1px solid $input-border;
+            border-radius: 4px;
+            &.user{
+                border-color: transparent;
+            }
+            &::placeholder{
+                color: $info-text;
+            }
+            &[type=checkbox]{   
+                width: 12px;
+                height: 12px;
+                border-radius: 3px;
+            }
+            &[type=submit]{
+                width: 25%;
+                @include mobile{
+                    width: 50%;
+                }
+            }
+        }
+        select{
+            padding: 7px 8px;
+            margin-bottom: 8px;
+            border: 1px solid $input-border;
+            border-radius: 4px;
+            color: $info-text;
+        }
+        option{
+            color: $info-text;
+        }
+        input[type=checkbox]:checked{
+            position: relative;
+        }
+    
+        input[type=checkbox]:checked:before{
+            position: absolute;
+            top: 0px;
+            left: 0;
+            content: '✓';
+            width: 12px;
+            height: 12px;
+            border-radius: 3px;
+            text-align: center;
+            line-height: 12px;
+            font-size: 8px;
+            color: #fff;
+            background-color: $primary;
+        }
+    }
+}
+
+
+.infoForm{
+    &-body{
+        width: calc(100% / 7 * 4);
+        @include mobile(){
+            width: calc(100% / 4 * 3);
+        }
+    }
+    &-title{
+        width: calc(100% / 7);
+        @include mobile(){
+            width: calc(100% / 4);
+        }
+    }
+    &-ml{
+        margin-left: calc(100% / 7);
+        @include mobile(){
+            margin-left: calc(100% / 4);
+        }
+    }
+}
+.addressForm{
+    select{
+        width: 45%;
+        @include mobile(){
+            width: 31%;
+        }
+    }
+    select[name=country]{
+        margin-right: 30%;
+        @include mobile(){
+            width: 64%;
+        }
+    }
+}
+

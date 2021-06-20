@@ -1,0 +1,41 @@
+.modal {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, .5);
+  pointer-events: none;
+  opacity: 0;
+  z-index: 1000;
+  transition: .3s;
+
+  &.show {
+    pointer-events: auto;
+    opacity: 1;
+
+    .modal-content{
+      transform: translateY(0); 
+    }
+  }
+
+  &-content {
+    background: #fff;
+    border-radius: 4px;
+    padding: 17px;
+    width: 540px;
+    max-width: 45%;
+    text-align: center;
+    line-height: 28px;
+    color: $primary;
+    transform: translateY(-50px);
+    transition: .3s;
+
+    h3{
+      font-weight: normal;
+    }
+  }
+}

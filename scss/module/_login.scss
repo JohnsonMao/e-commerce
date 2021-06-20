@@ -1,0 +1,49 @@
+.login{
+    min-height: calc(100vh - 327.6px);
+    
+    &-img{
+        overflow: hidden;
+        position: relative;
+        min-height: 220px;
+        img{
+            display: block;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            object-fit: cover;
+        }
+    }
+    h2{
+        font-size: $h2-font-size;
+        margin-bottom: 12px;
+    }
+    &-form{
+        label{
+            font-size: $h6-font-size;
+            font-weight: normal;
+            color: $login-label;
+            margin-bottom: 4px;
+            input{
+                width: 100%;
+                padding-top: 9px;
+                padding-bottom: 10px;
+                padding-left: 12px;
+                border-color: $input-border;
+                border-radius: 4px;
+                margin-bottom: 20px;
+                &::placeholder{
+                    color: $info-text;
+                }
+            }
+        }
+    }
+    &-btn{
+        a{
+            color: $primary;
+        }
+        input{
+            margin-left: 8px;
+        }
+    }
+}

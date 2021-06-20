@@ -1,0 +1,48 @@
+.popularProduct{
+    padding-top: 40px;
+    padding-bottom: 20px;
+    @include mobile(){
+        padding-top: 36px;
+        padding-bottom: 16px;   
+    }
+    >li{
+        @include pad(){
+            &:last-child{
+                display: none;
+            }
+        }
+        @include mobile(){
+            margin-bottom: 30px;
+            &:last-child{
+                display: block;
+            }
+        }
+    }
+    .card{
+        background: $bg-dark;
+        
+        .card-img{
+            height: calc(100vw * 1 / 2);
+            max-height: 540px;
+            min-height: 350px;    
+            cursor: pointer;
+        }
+        .card-footer{
+            position: relative;
+            bottom: 100px;
+            opacity: 0;
+            transition: .5s;
+        }
+        
+        &:hover{
+            transform: scale(1.05);
+            padding: 3px;
+            margin-bottom: -6px;
+            box-shadow: 5px 5px 15px rgba(#000, 0.6);
+            .card-footer{
+                bottom: 0;
+                opacity: 1;
+            }
+        }
+    }
+}

@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>d'Perfume Login</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <!-- CSS -->
+    <link rel="stylesheet" href="./css/member.css">
+    <!-- Google Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Material+Icons"
+      rel="stylesheet">
+    <!-- JS -->
+    <script src="./js/jquery-3.6.0.min.js"></script>
+    <script src="./js/all.js"></script>
+</head>
+<body>
+    <header class="header">
+        <div class="container d-flex justify-content-between align-items-center">
+            <h1 class="logo replaceText"><a href="./index.html">
+                d'Perfume
+            </a></h1>
+            <ul class="headerMenu nav">
+                <li><a href="./shop.html"><i class="material-icons">
+                    store
+                </i>
+                    Product
+                </a></li>
+                <li><a href="#"><i class="material-icons">
+                    person
+                    </i>
+                    Mypage
+                </a></li>
+                <li><a href="#"><i class="material-icons">
+                    favorite
+                    </i>
+                    Wishlist
+                </a></li>
+                <li><a href="#"><i class="material-icons">
+                    shopping_cart
+                    </i>
+                    Cart<span class="shoppingCart-num">3</span>
+                </a></li>
+            </ul>
+            <div class="mobileMenu">
+                <a href="#" class="shoppingCart">
+                    <i class="material-icons">shopping_cart</i>
+                    <span class="shoppingCart-num">3</span>
+                </a>
+                <button class="mobileMenu-btn">
+                    <div class="mobileMenu-btn-burger"></div>
+                </button>
+            </div>
+            <ul class="mobileMenu-list nav">
+                <li><a href="./shop.html">Product</a></li>
+                <li><a href="#">Wishlist</a></li>
+                <li><a href="#">Blog</a></li>
+                <li><a href="#">Contact</a></li>
+                <li><a href="#">Mypage</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <div class="wrap">
+    
+    <nav class="bg-primary">
+        <ul class="productMenu container nav">
+            <li><a href="#">CHANEL</a></li>
+            <li><a href="#">Jo Malone</a></li>
+            <li><a href="#">Curology</a></li>
+            <li><a href="#">Dior</a></li>
+            <li><a href="#">Chloe</a></li>
+            <li><a href="#">ZARA</a></li>
+        </ul>
+    </nav>
+
+    <section class="member container">
+        <div class="row justify-content-between">
+            <div class="col-2">
+                <h2>會員中心</h2>
+                <ul class="memberMenu nav">
+                    <li class="active"><a href="#">會員資料修改</a></li>
+                    <li><a href="#">訂單查詢</a></li>
+                    <li><a href="#">退／換貨申請</a></li>
+                </ul>
+            </div>
+
+            <div class="memberNum col-3">
+                <h3><i class="material-icons">
+                    person</i>
+                    會員編碼
+                    <span>T00020080615</span></h3>
+                <table>
+                    <tr>
+                        <th>購物車</th>
+                        <td id="shoppingCart-num">3</td>
+                    </tr>
+                    <tr>
+                        <th>我的收藏</td>
+                        <td>23</td>
+                    </tr>
+                    <tr>
+                        <th>完成訂單</td>
+                        <td>8</td>
+                    </tr>
+                    <tr>
+                        <th>會員紅利</td>
+                        <td>2680</td>
+                    </tr>
+                    <tr>
+                        <th>邀請碼</td>
+                        <td>TK2075</td>
+                    </tr>
+                </table>
+                <p>新戶輸入邀請碼即可獲贈紅利點數1000點</p>
+            </div>
+
+            <div class="memberModify">
+                <h3>個人資料修改</h3>
+                    <form action="" class="infoForm">
+                    
+                    <div class="d-flex">
+                        <label for="user" class="infoForm-title">會員帳號</label>
+                        <div class="infoForm-body">
+                            <input type="email" class="user" id="user" placeholder="email@example.com" readonly="readonly">
+                        </div>
+                    </div>    
+                        
+                    <div class="d-flex">
+                        <label for="username" class="infoForm-title">會員姓名</label>
+                        
+                        <div class="infoForm-body">
+                            <input type="text" class="username" id="username">
+                        </div>
+                    </div>
+                    
+                    <div class="d-flex">
+                        <label for="gender" class="infoForm-title">會員性別</label>
+                        
+                        <div class="infoForm-title">
+                            <select name="gender" class="" id="gender">
+                                <option value="female">女</option>
+                                <option value="male">男</option>
+                            </select>
+                        </div>
+                    </div>
+                            
+                        
+                    
+                    <div class="d-flex">
+                        <label for="email" class="infoForm-title">電子信箱</label>
+                        
+                        <div class="infoForm-body">
+                            <input type="email" class="email" id="email" placeholder="email@example.com">
+                        </div>
+                    </div>
+                        
+                    
+                    <div class="d-flex">
+                        <label for="phoneNum" class="infoForm-title">手機號碼</label>
+                        
+                        <div class="infoForm-body">
+                            <input type="tel" class="phoneNum" id="phoneNum">
+                        </div>
+                    </div>
+                        
+                    
+                    <div class="addressForm d-flex">
+                        <label for="address" class="infoForm-title">聯絡地址</label>
+                        
+                        <div class="infoForm-body">
+                            <select name="country">
+                                <option value="Taiwan">本島及離島</option>
+                                <option value="Japan">日本</option>
+                                <option value="USA">美國</option>
+                            </select>
+                            <select name="city">
+                                <option value="KaohsiungCity">高雄市</option>
+                                <option value="TaipeiCity">台北市</option>
+                                <option value="OutlyingIslands">外島</option>
+                            </select>
+                            <select name="district">
+                                <option value="Yancheng">鹽埕區</option>
+                                <option value="Zuoying">左營區</option>
+                                <option value="Nanzi">楠梓區</option>
+                            </select>
+                            <input type="text" class="address" id="address" placeholder="請輸入地址">
+                        </div>
+                    </div>    
+                        
+                    
+                    
+                    <div class="receive infoForm-body infoForm-ml">
+                        <label for="receive">
+                        <input type="checkbox" checked="checked" id="receive">
+                        我願意收到最新優惠情報</label>
+                    </div>
+                        
+                    
+                    <div class="addressForm d-flex">
+                        <label for="deliver" class="infoForm-title">配送地址</label>
+                        
+                        <div class="infoForm-body">
+                            <select name="country">
+                                <option value="Taiwan">本島及離島</option>
+                                <option value="Japan">日本</option>
+                                <option value="USA">美國</option>
+                            </select>
+                            <select name="city">
+                                <option value="KaohsiungCity">高雄市</option>
+                                <option value="TaipeiCity">台北市</option>
+                                <option value="OutlyingIslands">外島</option>
+                            </select>
+                            <select name="district">
+                                <option value="Yancheng">鹽埕區</option>
+                                <option value="Zuoying">左營區</option>
+                                <option value="Nanzi">楠梓區</option>
+                            </select>
+                            <input type="text" class="address" id="deliver" placeholder="請輸入地址">
+                        </div>
+                    </div>
+                        
+                        <input type="submit" id="" class=" btn btn-primary infoForm-ml" value="確定修改">
+                        
+                    </form>
+                <h3>修改密碼</h3>
+                    <form action="" class="passwordForm">
+                        <div class="d-flex">
+                            <label for="oldPassword" class="infoForm-title">舊密碼</label>
+                            <div class="infoForm-body">
+                            <input type="password" id="oldPassword">
+                            </div>
+                        </div>
+                        <div class="d-flex">
+                            <label for="newPassword" class="infoForm-title">新密碼</label>
+                            <div class="infoForm-body">
+                            <input type="password" id="newPassword">
+                            </div>
+                        </div>
+                        <div class="d-flex">
+                            <label for="checkPassword" class="infoForm-title">確認密碼</label>
+                            <div class="infoForm-body">
+                            <input type="password" id="checkPassword">
+                            </div>
+                        </div>
+                        <input type="submit" id="" class=" btn btn-primary infoForm-ml" value="變更密碼">
+                    </form>
+
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container d-flex align-items-center justify-content-between">
+            <ul class="d-flex align-items-center">
+                <li><h2 class="logo replaceText"><a href="./index.html">
+                d'Persume
+                </a></h2></li>
+                <li><span class="text-light">© 2020. All Rights Reserved.</span></li>
+            </ul>
+            <ul class="footerMenu nav">
+                <li><a href="#">Product</a></li>
+                <li><a href="#">Blog</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </div>
+    </footer>
+
+    </div>
+</body>
+</html>

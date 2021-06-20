@@ -1,0 +1,18 @@
+.productMenu{
+    @include mobile(){
+        display: none;
+    }
+    a{
+        padding: 11px 14px;
+        color: $light;
+        &::after{
+            bottom: 10px;
+            background: $light;
+        }
+        &:hover{
+            &::after{
+                width: calc(100% - 28px)
+            }
+        }
+    }
+}

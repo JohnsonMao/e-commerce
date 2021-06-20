@@ -1,0 +1,28 @@
+.headerMenu {
+    @include mobile(){
+        display: none;
+    }
+    a{
+        padding: 16px;
+        &::after{
+            bottom: 12px;
+        }
+        &:hover{
+            &::after{
+                width: calc(100% - 32px)
+            }
+        }
+    }
+}
+.shoppingCart-num{
+    font-size: $h5-font-size;
+    color: $font-gray;
+    border-right: 2px;
+    border-left: 2px;
+    border-style: solid;
+    border-color:  $font-gray;
+    border-radius: 7px;
+    margin-left: 4px;
+    padding-right: 3px;
+    padding-left: 3px;
+}

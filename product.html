@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>d'Perfume Product</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <!-- CSS -->
+    <link rel="stylesheet" href="./css/product.css">
+    <!-- Google Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Material+Icons"
+      rel="stylesheet">
+    <!-- JS -->
+    <script src="./js/jquery-3.6.0.min.js"></script>
+    <script src="./js/all.js"></script>
+</head>
+<body>
+    <header class="header">
+        <div class="container d-flex justify-content-between align-items-center">
+            <h2 class="logo replaceText"><a href="./index.html">
+                d'Perfume
+            </a></h2>
+            <ul class="headerMenu nav">
+                <li><a href="./shop.html"><i class="material-icons">
+                    store
+                </i>
+                    Product
+                </a></li>
+                <li><a href="./login.html"><i class="material-icons">
+                    person
+                    </i>
+                    log in
+                </a></li>
+                <li><a href="#"><i class="material-icons">
+                    favorite
+                    </i>
+                    Wishlist
+                </a></li>
+                <li><a href="#"><i class="material-icons">
+                    shopping_cart
+                    </i>
+                    Cart<span class="shoppingCart-num">3</span>
+                </a></li>
+            </ul>
+            <div class="mobileMenu">
+                <a href="#" class="shoppingCart">
+                    <i class="material-icons">shopping_cart</i>
+                    <span class="shoppingCart-num">3</span>
+                </a>
+                <button class="mobileMenu-btn">
+                    <div class="mobileMenu-btn-burger"></div>
+                </button>
+            </div>
+            <ul class="mobileMenu-list nav">
+                <li><a href="./shop.html">Product</a></li>
+                <li><a href="#">Wishlist</a></li>
+                <li><a href="#">Blog</a></li>
+                <li><a href="#">Contact</a></li>
+                <li><a href="./login.html">log in</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <div class="wrap">
+    
+    <nav class="bg-primary">
+        <ul class="productMenu container nav">
+            <li><a href="#">CHANEL</a></li>
+            <li><a href="#">Jo Malone</a></li>
+            <li><a href="#">Curology</a></li>
+            <li><a href="#">Dior</a></li>
+            <li><a href="#">Chloe</a></li>
+            <li><a href="#">ZARA</a></li>
+        </ul>
+    </nav>
+
+    <section class="container">
+        <div class="productPage row">
+        
+            <div class="productPage-img col-8">
+                <img src="./img/product1.jpg" alt="CHANEL N°5">
+            </div>
+
+
+
+            <div class="card col-4">
+                <div class="card-body">
+                    <h1>CHANEL N°5</h1>
+                    <p>N°5，女性魅力的極致精髓。散發柔美澄透的乙醛花束香氣。經典傳奇香氛，蘊藏於極簡設計的獨特瓶身。</p>
+                    <p class="product-price">NT$4,980</p>
+                </div>
+                <div class="card-footer">
+                    <form class="product-form d-flex">
+                        <input type="text" value="1" class="product-num col-6">
+                        <input type="button" value="加入購物車" class="product-btn col-6 add-shopping">
+                        <span class="material-icons inc">
+                            arrow_drop_up
+                        </span>
+                        <span class="material-icons dec">
+                            arrow_drop_down
+                        </span>
+                    </form>
+                    <ul>
+                    <li>
+                        <a href="#" class="add-favorite"><i class="material-icons">
+                        favorite
+                        </i>
+                        加入我的收藏
+                        </a>
+                    </li>
+                    </ul>
+                </div>
+                <h3>商品購買須知</h3>
+                <p>產品因拍攝關係顏色可能略有差異，實際以廠商出貨為主。 商品情境照為示意用，僅商品主體不包含其他配件，請以規格內容物為主。 D’Perfume 盡可能確保所列商品備貨充足，但偶爾仍會有產品售罄的情況。如您所訂購的商品庫存不足，我們將盡快以電子郵件通知您。任何訂單變動均會在訂單總額與出貨訊息內更新。</p>
+                <h3>退換貨須知</h3>
+                <p>依《消費者保護法》的規定，於全站購物皆享有商品到貨【七日猶豫期】（含例假日）之權益。若收到的商品有任何問題，可於猶豫期內申請退貨。</p>
+            </div>
+
+
+
+
+            <div class="col-8">
+                <div class="row">
+                <div class="productPage-img col-6">
+                    <img src="./img/product2.jpg" alt="CHANEL N°5">
+                </div>
+                <div class="productPage-img col-6">
+                    <img src="./img/product3.jpg" alt="CHANEL N°5">
+                </div>
+                </div>
+            </div>
+            <div class="productPage-img col-8">
+                <img src="./img/product1.jpg" alt="CHANEL N°5">
+            </div>
+        </div>
+    </section>
+
+
+    <div class="modal modal-shopping modal-close">
+        <div class="modal-content">
+            <h3>已加入購物車</h3>
+        </div>
+    </div>
+    <div class="modal modal-favorite modal-close">
+        <div class="modal-content">
+            <h3>已加入我的收藏</h3>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container d-flex align-items-center justify-content-between">
+            <ul class="d-flex align-items-center">
+                <li><h2 class="logo replaceText"><a href="./index.html">
+                d'Persume
+                </a></h2></li>
+                <li><span class="text-light">© 2020. All Rights Reserved.</span></li>
+            </ul>
+            <ul class="footerMenu nav">
+                <li><a href="#">Product</a></li>
+                <li><a href="#">Blog</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </div>
+    </footer>
+
+    </div>
+</body>
+</html>

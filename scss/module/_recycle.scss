@@ -1,0 +1,38 @@
+.reImg{
+    height: 520px;
+    overflow: hidden;
+    
+    @include mobile(){
+        margin-bottom: 8px;
+    }
+    img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+.reText{
+    h3{
+        font-size: $h2-font-size;
+    }
+    h4{
+        font-size: $h5-font-size;
+        font-weight: normal;
+        margin-bottom: 16px;
+        @include pad(){
+            margin-bottom: 12px;
+        }
+        @include mobile(){
+            margin-bottom: 8px;
+        }
+    }
+    p{
+        font-size: $h6-font-size;
+    }
+    @include pad(){
+        width: 50%;
+    }
+    @include mobile(){
+        width: 100%;
+    }
+}
