@@ -9,11 +9,16 @@ $(document).ready(function(){
 
     $('.dec').click(function(){
         let n = $(this).siblings('.product-num').val();
+        // 0 以下不倒扣
         if(n==0){
             return;
         }
-
         n--;
         $(this).siblings('.product-num').val(n);
     });
+
+    // 加入購物車後表單歸 0 
+    $('.add-shopping').click(function(){
+        $(this).siblings('.product-num').val(0);
+    })
 })
