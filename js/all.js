@@ -1,10 +1,12 @@
-$(function(){
+$(document).ready(function(){
 
+    // burger button
     $('.mobileMenu-btn').click(function(){
         $(this).toggleClass('open');
         $('.mobileMenu-list').slideToggle();
     });
 
+    // modal
     $('.add-shopping').click(function(){
         $('.modal-shopping').addClass('show');
     });
