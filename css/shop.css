@@ -917,6 +917,13 @@ html, body {
           justify-content: center;
 }
 
+nav {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  z-index: 500;
+}
+
 @media (max-width: 720px) {
   .productMenu {
     display: none;
