@@ -46,7 +46,6 @@ ul, ol{
     height: calc(100vh - 56px);
     background: url('../img/index1.jpg') no-repeat;
     background-size: cover;
-    background-attachment: fixed;
 }
 .contact{
     height: calc(600px);
@@ -67,6 +66,31 @@ ul, ol{
         color: #000;
         background: rgba(#000, .1);
     }
+}
+.nav-text-gray{
+    a{
+        color: $gray;
+    }
+}
+.mobile_menu{
+    @include media-breakpoint-down(md) {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        height: calc(100vh - 56px);
+        background: rgba($gray, 0.5);
+        a{
+            border-top: 1px solid #fff;
+            color: #fff;
+            background: $gray-600;
+        }
+    }
+}
+.shopping-num{
+    position: absolute;
+    top: -30%;
+    right: -30%;
 }
 
 .card-imgFrame{
@@ -90,19 +114,6 @@ ul, ol{
 
 
 .btn-burger{
-    // position: relative;
-    // display: flex;
-    // justify-content: flex-end;
-    // align-items: center;
-    // margin-left: 12px;
-    // width: 72px;
-    // height: 56px;
-    // cursor: pointer;
-    // padding: 0;
-    // border: none;
-    // background: transparent;
-    // transition: all .2s ease-in-out;
-
     &:focus{
         box-shadow: none;
     }

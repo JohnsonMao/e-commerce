@@ -466,7 +466,8 @@ $font-sizes: (
   4: $h4-font-size,
   5: $h5-font-size,
   6: $h6-font-size,
-  7: 14px
+  7: 14px,
+  8: 12px
 ) !default;
 // scss-docs-end font-sizes
 
@@ -977,7 +978,7 @@ $navbar-dark-disabled-color:        rgba($white, .25) !default;
 $navbar-dark-toggler-icon-bg:       url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'><path stroke='#{$navbar-dark-color}' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/></svg>") !default;
 $navbar-dark-toggler-border-color:  rgba($white, .1) !default;
 
-$navbar-light-color:                rgba($gray-300, .55) !default;
+$navbar-light-color:                rgba($gray-300, 1) !default;
 $navbar-light-hover-color:          rgba($gray-300, .7) !default;
 $navbar-light-active-color:         rgba($gray-300, .9) !default;
 $navbar-light-disabled-color:       rgba($gray-300, .3) !default;

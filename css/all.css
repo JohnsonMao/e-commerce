@@ -64,7 +64,6 @@ ul, ol {
   height: calc(100vh - 56px);
   background: url("../img/index1.jpg") no-repeat;
   background-size: cover;
-  background-attachment: fixed;
 }
 
 .contact {
@@ -84,6 +83,32 @@ ul, ol {
 .bg-black-hover:hover {
   color: #000;
   background: rgba(0, 0, 0, 0.1);
+}
+
+.nav-text-gray a {
+  color: #8D8D8D;
+}
+
+@media (max-width: 767.98px) {
+  .mobile_menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: calc(100vh - 56px);
+    background: rgba(141, 141, 141, 0.5);
+  }
+  .mobile_menu a {
+    border-top: 1px solid #fff;
+    color: #fff;
+    background: #707070;
+  }
+}
+
+.shopping-num {
+  position: absolute;
+  top: -30%;
+  right: -30%;
 }
 
 .card-imgFrame {
@@ -1478,6 +1503,10 @@ ul, ol {
 
 .fs-7 {
   font-size: 0.875rem !important;
+}
+
+.fs-8 {
+  font-size: 0.75rem !important;
 }
 
 .fst-italic {
