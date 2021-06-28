@@ -229,7 +229,7 @@ $enable-reduced-motion:       true !default;
 $enable-smooth-scroll:        true !default;
 $enable-grid-classes:         true !default;
 $enable-button-pointers:      true !default;
-$enable-rfs:                  true !default;
+$enable-rfs:                  false !default;
 $enable-validation-icons:     true !default;
 $enable-negative-margins:     false !default;
 $enable-deprecation-messages: true !default;
@@ -262,9 +262,10 @@ $spacers: (
   3: $spacer,
   4: $spacer * 1.25,
   5: $spacer * 1.875,
-  6: $spacer * 2.5,
-  7: $spacer * 3.25,
-  8: $spacer * 3.75
+  6: $spacer * 2,
+  7: $spacer * 2.5,
+  8: $spacer * 3.25,
+  9: $spacer * 3.75
 ) !default;
 
 $negative-spacers: if($enable-negative-margins, negativify-map($spacers), null) !default;
@@ -322,7 +323,7 @@ $grid-breakpoints: (
   sm: 576px,
   md: 768px,
   lg: 992px,
-  xl: 1200px
+  xl: 1140px
 ) !default;
 // scss-docs-end grid-breakpoints
 
