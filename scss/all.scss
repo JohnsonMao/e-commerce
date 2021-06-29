@@ -139,7 +139,7 @@ html, body{
             color: $secondary;
 
             &::after{
-                background: $secondary;
+                border-color: $secondary;
             }
         }
     }
@@ -192,10 +192,12 @@ html, body{
     &::after{
         content: '';
         position: absolute;
+        top: 50%;
         left: 0;
-        bottom: 0;
+        transform: translateY(-50%);
         width: 0;
-        height: 2px;
+        height: 1.25em;
+        border-bottom: 2px solid;
         transition: width .2s ease-in-out;
     }
     &:hover{
@@ -205,24 +207,36 @@ html, body{
         }
     }
 }
+.siteMenu{
+    .hover-baseline:hover:after{
+        left: 16px;
+        width: calc(100% - 32px);
+    }
+}
+.productMenu{
+    .hover-baseline:hover:after{
+        left: 14px;
+        width: calc(100% - 28px);
+    }
+}
 .hover-gray-baseline{
     &::after{
-        background: $gray;
+        border-color: $gray;
     }
 }
 .hover-secondary-baseline{
     &::after{
-        background: $secondary;
+        border-color: $secondary;
     }
 }
 .hover-white-baseline{
     &::after{
-        background: #fff;
+        border-color: #fff;
     }
 }
 .hover-black-baseline{
     &::after{
-        background: #000;
+        border-color: #000;
     }
 }
 .active{
