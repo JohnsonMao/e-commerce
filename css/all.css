@@ -18,9 +18,25 @@ section {
   }
 }
 
+nav {
+  margin-bottom: 80px;
+}
+
 ul, ol {
   margin: 0;
   padding: 0;
+}
+
+html, body {
+  height: 100%;
+  overflow-y: hidden;
+  line-height: 1.5;
+}
+
+.wrap {
+  height: calc(100% - 56px);
+  margin-top: 56px;
+  overflow: auto;
 }
 
 .ol-inside {
@@ -60,10 +76,18 @@ ul, ol {
   z-index: -1;
 }
 
+.mb-1s {
+  margin-bottom: 2px;
+}
+
+.p-3s {
+  padding: 14px;
+}
+
 .banner {
-  height: calc(100vh - 56px);
   background: url("../img/index1.jpg") no-repeat;
   background-size: cover;
+  background-attachment: fixed;
 }
 
 .contact {
@@ -132,6 +156,18 @@ ul, ol {
   height: calc(1080px);
 }
 
+.page-style a {
+  color: #000;
+}
+
+.page-style .active a {
+  color: #AC8A46;
+}
+
+.page-style .active a::after {
+  background: #AC8A46;
+}
+
 .btn-burger:focus {
   -webkit-box-shadow: none;
           box-shadow: none;
@@ -181,6 +217,51 @@ ul, ol {
 .btn-burger.open .btn-burger-icon::after {
   -webkit-transform: rotate(45deg) translate(-45px, 45px);
           transform: rotate(45deg) translate(-45px, 45px);
+}
+
+.hover-baseline {
+  position: relative;
+}
+
+.hover-baseline::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  -webkit-transition: width .2s ease-in-out;
+  transition: width .2s ease-in-out;
+}
+
+.hover-baseline:hover::after {
+  content: '';
+  width: 100%;
+}
+
+.hover-gray-baseline::after {
+  background: #8D8D8D;
+}
+
+.hover-secondary-baseline::after {
+  background: #AC8A46;
+}
+
+.hover-white-baseline::after {
+  background: #fff;
+}
+
+.hover-black-baseline::after {
+  background: #000;
+}
+
+.active a {
+  cursor: default;
+}
+
+.active .hover-baseline::after {
+  content: '';
+  width: 100%;
 }
 
 .align-baseline {

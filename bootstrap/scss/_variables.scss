@@ -256,16 +256,16 @@ $gradient: linear-gradient(180deg, rgba($white, .15), rgba($white, 0)) !default;
 // scss-docs-start spacer-variables-maps
 $spacer: 1rem !default;
 $spacers: (
-  0: 0,
-  1: $spacer / 4,
-  2: $spacer / 2,
-  3: $spacer,
-  4: $spacer * 1.25,
-  5: $spacer * 1.875,
-  6: $spacer * 2,
-  7: $spacer * 2.5,
-  8: $spacer * 3.25,
-  9: $spacer * 3.75
+  0:    0,
+  1:    $spacer / 4,
+  2:    $spacer / 2,
+  3:    $spacer,
+  4:    $spacer * 1.25,
+  5:    $spacer * 1.875,
+  6:    $spacer * 2,
+  7:    $spacer * 2.5,
+  8:    $spacer * 3.25,
+  9:    $spacer * 3.75
 ) !default;
 
 $negative-spacers: if($enable-negative-margins, negativify-map($spacers), null) !default;

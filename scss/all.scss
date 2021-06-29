@@ -15,11 +15,24 @@ section{
         margin-bottom: 40px;
     }
 }
+nav{
+    margin-bottom: 80px;
+}
 ul, ol{
     margin: 0;
     padding: 0;
 }
 
+html, body{
+    height: 100%;
+    overflow-y: hidden;
+    line-height: 1.5;
+}
+.wrap{
+    height: calc(100% - 56px);
+    margin-top: 56px;
+    overflow: auto;
+}
 .ol-inside{
     list-style-position: inside;
     li::marker{
@@ -42,10 +55,16 @@ ul, ol{
     text-indent: -101%;
     z-index: -1;
 }
+.mb-1s{
+    margin-bottom: 2px;
+}
+.p-3s{
+    padding: 14px;
+}
 .banner{
-    height: calc(100vh - 56px);
     background: url('../img/index1.jpg') no-repeat;
     background-size: cover;
+    background-attachment: fixed;
 }
 .contact{
     height: calc(600px);
@@ -111,7 +130,20 @@ ul, ol{
         height: calc(1080px);
     }
 }
+.page-style{
+    a{
+        color: #000;
+    }
+    .active{
+        a{
+            color: $secondary;
 
+            &::after{
+                background: $secondary;
+            }
+        }
+    }
+}
 
 .btn-burger{
     &:focus{
@@ -153,6 +185,53 @@ ul, ol{
         &::after{
             transform: rotate(45deg) translate(-45px, 45px);
         }
+    }
+}
+.hover-baseline{
+    position: relative;
+    &::after{
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 0;
+        height: 2px;
+        transition: width .2s ease-in-out;
+    }
+    &:hover{
+        &::after{
+            content: '';
+            width: 100%;
+        }
+    }
+}
+.hover-gray-baseline{
+    &::after{
+        background: $gray;
+    }
+}
+.hover-secondary-baseline{
+    &::after{
+        background: $secondary;
+    }
+}
+.hover-white-baseline{
+    &::after{
+        background: #fff;
+    }
+}
+.hover-black-baseline{
+    &::after{
+        background: #000;
+    }
+}
+.active{
+    a{
+        cursor: default;
+    }
+    .hover-baseline::after{
+        content: '';
+        width: 100%;
     }
 }
 
