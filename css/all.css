@@ -277,7 +277,7 @@ html, body {
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
   width: 0;
-  height: 1.25em;
+  height: 1.5em;
   border-bottom: 2px solid;
   -webkit-transition: width .2s ease-in-out;
   transition: width .2s ease-in-out;
@@ -288,18 +288,48 @@ html, body {
   width: 100%;
 }
 
-.siteMenu .hover-baseline:hover:after {
+.siteMenu .hover-baseline::after {
   left: 16px;
+}
+
+.siteMenu .hover-baseline:hover:after {
   width: calc(100% - 32px);
 }
 
-.productMenu .hover-baseline:hover:after {
+.footerMenu .hover-baseline::after {
+  left: 30px;
+}
+
+@media (max-width: 991.98px) {
+  .footerMenu .hover-baseline::after {
+    left: 20px;
+  }
+}
+
+.footerMenu .hover-baseline:hover:after {
+  width: calc(100% - 60px);
+}
+
+@media (max-width: 991.98px) {
+  .footerMenu .hover-baseline:hover:after {
+    width: calc(100% - 40px);
+  }
+}
+
+.productMenu .hover-baseline::after {
   left: 14px;
+}
+
+.productMenu .hover-baseline:hover:after {
   width: calc(100% - 28px);
 }
 
 .hover-gray-baseline::after {
   border-color: #8D8D8D;
+}
+
+.hover-primary-baseline::after {
+  border-color: #916000;
 }
 
 .hover-secondary-baseline::after {
@@ -573,7 +603,7 @@ html, body {
 }
 
 .border-success {
-  border-color: #198754 !important;
+  border-color: #495057 !important;
 }
 
 .border-info {
@@ -589,7 +619,7 @@ html, body {
 }
 
 .border-light {
-  border-color: #CED4DA !important;
+  border-color: #818A91 !important;
 }
 
 .border-dark {
@@ -1753,7 +1783,7 @@ html, body {
 }
 
 .text-success {
-  color: #198754 !important;
+  color: #495057 !important;
 }
 
 .text-info {
@@ -1769,7 +1799,7 @@ html, body {
 }
 
 .text-light {
-  color: #CED4DA !important;
+  color: #818A91 !important;
 }
 
 .text-dark {
@@ -1821,7 +1851,7 @@ html, body {
 }
 
 .bg-success {
-  background-color: #198754 !important;
+  background-color: #495057 !important;
 }
 
 .bg-info {
@@ -1837,7 +1867,7 @@ html, body {
 }
 
 .bg-light {
-  background-color: #CED4DA !important;
+  background-color: #818A91 !important;
 }
 
 .bg-dark {

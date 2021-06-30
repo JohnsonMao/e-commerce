@@ -222,7 +222,7 @@ html, body{
         left: 0;
         transform: translateY(-50%);
         width: 0;
-        height: 1.25em;
+        height: 1.5em;
         border-bottom: 2px solid;
         transition: width .2s ease-in-out;
     }
@@ -234,20 +234,43 @@ html, body{
     }
 }
 .siteMenu{
-    .hover-baseline:hover:after{
+    .hover-baseline::after{
         left: 16px;
+    }
+    .hover-baseline:hover:after{
         width: calc(100% - 32px);
     }
 }
-.productMenu{
+.footerMenu{
+    .hover-baseline::after{
+        left: 30px;
+        @include media-breakpoint-down(lg){
+            left: 20px;
+        }
+    }
     .hover-baseline:hover:after{
+        width: calc(100% - 60px);
+        @include media-breakpoint-down(lg){
+            width: calc(100% - 40px);
+        }
+    }
+}
+.productMenu{
+    .hover-baseline::after{
         left: 14px;
+    }
+    .hover-baseline:hover:after{
         width: calc(100% - 28px);
     }
 }
 .hover-gray-baseline{
     &::after{
         border-color: $gray;
+    }
+}
+.hover-primary-baseline{
+    &::after{
+        border-color: $primary;
     }
 }
 .hover-secondary-baseline{
