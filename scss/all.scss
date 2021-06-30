@@ -6,6 +6,19 @@
 body{
     line-height: 1.5;
 }
+input{
+    border-color: $gray-100;
+    border-radius: 4px;
+}
+input::placeholder{
+    color: $gray-500;
+}
+label{
+    color: $gray-500;
+}
+option{
+    color: $gray-500;
+}
 section{
     margin-bottom: 60px;
     @include media-breakpoint-down(lg) {
@@ -33,6 +46,9 @@ html, body{
     margin-top: 56px;
     overflow: auto;
 }
+.login-min-h{
+    min-height: calc(100% - 258px)
+}
 .ol-inside{
     list-style-position: inside;
     li::marker{
@@ -57,6 +73,9 @@ html, body{
 }
 .mb-1s{
     margin-bottom: 2px;
+}
+.ps-2-5{
+    padding-left: 12px;
 }
 .p-3s{
     padding: 14px;
@@ -185,6 +204,13 @@ html, body{
         &::after{
             transform: rotate(45deg) translate(-45px, 45px);
         }
+    }
+}
+.btn-arrow{
+    color: $gray-800;
+    &:hover{
+        color: #fff;
+        background: $gray-800;
     }
 }
 .hover-baseline{
