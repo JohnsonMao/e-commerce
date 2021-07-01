@@ -4547,7 +4547,7 @@ fieldset:disabled .btn {
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
-  color: #495057;
+  color: #818A91;
   background-color: #fff;
   background-clip: padding-box;
   border: 1px solid #CED4DA;
@@ -4577,7 +4577,7 @@ fieldset:disabled .btn {
 }
 
 .form-control:focus {
-  color: #495057;
+  color: #818A91;
   background-color: #fff;
   border-color: #c8b080;
   outline: 0;
@@ -4619,7 +4619,7 @@ fieldset:disabled .btn {
   margin: -0.375rem -0.75rem;
   -webkit-margin-end: 0.75rem;
           margin-inline-end: 0.75rem;
-  color: #495057;
+  color: #818A91;
   background-color: #A5A5A5;
   pointer-events: none;
   border-color: inherit;
@@ -4649,7 +4649,7 @@ fieldset:disabled .btn {
   margin: -0.375rem -0.75rem;
   -webkit-margin-end: 0.75rem;
           margin-inline-end: 0.75rem;
-  color: #495057;
+  color: #818A91;
   background-color: #A5A5A5;
   pointer-events: none;
   border-color: inherit;
@@ -4772,7 +4772,7 @@ textarea.form-control-lg {
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
-  color: #495057;
+  color: #818A91;
   background-color: #fff;
   background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23373A3C' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3e%3c/svg%3e");
   background-repeat: no-repeat;
@@ -4803,7 +4803,7 @@ textarea.form-control-lg {
 
 .form-select:-moz-focusring {
   color: transparent;
-  text-shadow: 0 0 0 #495057;
+  text-shadow: 0 0 0 #818A91;
 }
 
 .form-select-sm {
@@ -5182,7 +5182,7 @@ textarea.form-control-lg {
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
-  color: #495057;
+  color: #818A91;
   text-align: center;
   white-space: nowrap;
   background-color: #A5A5A5;

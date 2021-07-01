@@ -7,8 +7,26 @@ body{
     line-height: 1.5;
 }
 input{
+    color:  $gray-500;
     border-color: $gray-100;
     border-radius: 4px;
+}
+input[type=checkbox]:checked{
+    position: relative;
+}
+input[type=checkbox]:checked:before{
+    position: absolute;
+    top: 0px;
+    left: 0;
+    content: '✓';
+    width: 12px;
+    height: 12px;
+    border-radius: 3px;
+    text-align: center;
+    line-height: 12px;
+    font-size: 8px;
+    color: #fff;
+    background-color: $primary;
 }
 input::placeholder{
     color: $gray-500;
@@ -16,8 +34,10 @@ input::placeholder{
 label{
     color: $gray-500;
 }
-option{
-    color: $gray-500;
+select{
+    color:  $gray-500;
+    border-color: $gray-100;
+    border-radius: 4px;
 }
 section{
     margin-bottom: 60px;
@@ -163,7 +183,38 @@ html, body{
         }
     }
 }
+.member-title{
+    flex: 1;
+}
+.member-content{
+    flex: 6;
+}
+.member-content-input{
+    width: 66.66%;
 
+    @include media-breakpoint-down(md){
+        width: 100%;
+    }
+}
+.member-content-select-2{
+    width: 30%;
+    @include media-breakpoint-down(md){
+        width: 66%;
+    }
+}
+.member-content-select-1{
+    width: 30%;
+    
+    & + .member-content-select-1{
+        margin-left: 8px;
+    }
+}
+.receive-ms{
+    margin-left: calc(100% / 7 + var(--bs-gutter-y) / 2);
+    @include media-breakpoint-down(md){
+        margin-left: calc(100% / 4 + var(--bs-gutter-y) / 2);
+    }
+}
 .btn-burger{
     &:focus{
         box-shadow: none;
