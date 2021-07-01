@@ -1,10 +1,16 @@
-
 @import "../bootstrap/scss/functions";
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@500&family=Roboto&display=swap');
+$font-family:   "Ping Fang TC","SF Pro Text","Noto Sans TC","Roboto";
+
 @import "../bootstrap/scss/variables";
 @import "../bootstrap/scss/mixins/";
 @import "../bootstrap/scss/utilities";
+
+
 body{
     line-height: 1.5;
+    font-family: $font-family;
 }
 input{
     color:  $gray-500;
@@ -21,7 +27,7 @@ input[type=checkbox]:checked:before{
     content: '✓';
     width: 12px;
     height: 12px;
-    border-radius: 3px;
+    border-radius: 2px;
     text-align: center;
     line-height: 12px;
     font-size: 8px;
@@ -93,6 +99,9 @@ html, body{
 }
 .mb-1s{
     margin-bottom: 2px;
+}
+.mt-2-5{
+    margin-top: 12px;
 }
 .ps-2-5{
     padding-left: 12px;
@@ -183,36 +192,69 @@ html, body{
         }
     }
 }
+.text-gray-light{
+    color: $gray-200;
+}
 .member-title{
     flex: 1;
 }
+.member-data{
+    flex: 2;
+}
 .member-content{
     flex: 6;
+    @include media-breakpoint-down(xl){
+        flex: 4;
+    }
+    @include media-breakpoint-down(md){
+        flex: 3;
+    }
+}
+.member-list{
+    width: 255px;
 }
 .member-content-input{
     width: 66.66%;
 
-    @include media-breakpoint-down(md){
+    @include media-breakpoint-down(xl){
         width: 100%;
     }
 }
-.member-content-select-2{
+.member-content-2{
     width: 30%;
+    @include media-breakpoint-down(xl){
+        width: 45%;
+    }
     @include media-breakpoint-down(md){
         width: 66%;
     }
 }
-.member-content-select-1{
+.member-content-1{
     width: 30%;
-    
-    & + .member-content-select-1{
+    & + .member-content-1{
         margin-left: 8px;
     }
-}
-.receive-ms{
-    margin-left: calc(100% / 7 + var(--bs-gutter-y) / 2);
+    @include media-breakpoint-down(xl){
+        width: 45%;
+        & + .member-content-1{
+            margin-left: 8px;
+        }
+    }
     @include media-breakpoint-down(md){
-        margin-left: calc(100% / 4 + var(--bs-gutter-y) / 2);
+        width: 31%;
+        & + .member-content-1{
+            margin-left: 10px;
+        }
+    }
+}
+
+.member-content-ms{
+    margin-left: calc(100% / 7 );
+    @include media-breakpoint-down(xl){
+        margin-left: calc(100% / 5 );
+    }
+    @include media-breakpoint-down(md){
+        margin-left: 25%;
     }
 }
 .btn-burger{

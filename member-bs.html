@@ -36,7 +36,7 @@
                     <a class="d-flex justify-content-center align-items-center lh-1 hover-baseline hover-gray-baseline fs-5 p-3" href="#"><i class="material-icons d-none d-md-block">store</i>Product</a>
                     </li>
                     <li class="d-none d-md-block">
-                    <a class="d-flex justify-content-center align-items-center lh-1 hover-baseline hover-gray-baseline fs-5 p-3" href="#"><i class="material-icons">person</i>log in</a>
+                    <a class="d-flex justify-content-center align-items-center lh-1 hover-baseline hover-gray-baseline fs-5 p-3" href="#"><i class="material-icons">person</i>Mypage</a>
                     </li>
                     <li>
                     <a class="d-flex justify-content-center align-items-center lh-1 hover-baseline hover-gray-baseline fs-5 p-3" href="#"><i class="material-icons d-none d-md-block">favorite</i>Wishlist</a>
@@ -51,7 +51,7 @@
                     <a class="d-flex justify-content-center align-items-center lh-1 fs-5 p-3" href="#">Contact</a>
                     </li>
                     <li class="d-md-none">
-                    <a class="d-flex justify-content-center align-items-center lh-1 fs-5 p-3" href="#">log in</a>
+                    <a class="d-flex justify-content-center align-items-center lh-1 fs-5 p-3" href="#">Mypage</a>
                     </li>
                 </ul>
             </div>
@@ -86,36 +86,64 @@
     </nav>
 
     <section class="container">
-        <div class="row">
-            <div class="col-md-2">
-                <h2 class="text-gray-dark fs-5 mb-5">
+        <div class="row justify-content-end">
+            <div class="col-lg-2 col-md-3">
+                <h2 class="d-none d-md-block text-gray-dark fs-5 mb-5">
                     會員中心
                 </h2>
-                <ul class="nav flex-md-column mt-1">
+                <ul class="nav flex-md-column justify-content-between mt-md-1 my-7">
                     <li class="mb-5 active"><a href="#" class="text-gray-dark fs-6 hover-baseline hover-primary-baseline">會員資料修改</a></li>
                     <li class="mb-5"><a href="#" class="text-gray-dark fs-6 hover-baseline hover-primary-baseline">訂單查詢</a></li>
                     <li class="mb-5"><a href="#" class="text-gray-dark fs-6 hover-baseline hover-primary-baseline">退／換貨申請</a></li>
                 </ul>
             </div>
-            <div class="col-md-3 order-1">
-                <h3 class="d-flex align-items-center text-light fs-6"><i class="material-icons text-black">person</i>會員編碼<span class="text-gray fs-5 ms-1">T00020080615</span></h3>
+
+            <div class="col-xl-3 col-lg-4 col-md-9 order-lg-1">
+                <h3 class="d-flex align-items-center text-light fs-6 mb-4 pb-1"><i class="material-icons text-black">person</i>會員編碼<span class="text-gray fs-5 ms-1">T00020080615</span></h3>
+                <ul class="member-list">
+                    <li class="row g-0">
+                        <p class="member-title text-light fs-6">購物車</p>
+                        <p class="member-data text-light fs-6">3</p>
+                    </li>
+                    <li class="row g-0">
+                        <p class="member-title text-light fs-6">我的收藏</p>
+                        <p class="member-data text-light fs-6">23</p>
+                    </li>
+                    <li class="row g-0">
+                        <p class="member-title text-light fs-6">完成訂單</p>
+                        <p class="member-data text-light fs-6">8</p>
+                    </li>
+                    <li class="row g-0">
+                        <p class="member-title text-light fs-6">會員紅利</p>
+                        <p class="member-data text-light fs-6">2680</p>
+                    </li>
+                    <li class="row g-0">
+                        <p class="member-title text-light fs-6 mb-0">邀請碼</p>
+                        <p class="member-data text-light fs-6 mb-0">TK2075</p>
+                    </li>
+                </ul>
+                <p class="text-gray-light fs-7 mb-7">新戶輸入邀請碼即可獲贈紅利點數100點</p>
             </div>
-            <div class="col">
+
+            <div class="col-lg col-md-9">
                 <h3 class="fs-6 fw-bold border-bottom border-light mb-3 pb-2">個人資料修改</h3>
+
                 <form action="">
-                    <div class="input-group row g-3 mb-4">
+                    <div class="input-group row g-0 mb-4">
                         <label for="user" class="member-title fs-6 py-2">會員帳號</label>
                         <div class="member-content">
                             <input type="email" id="user" class="member-content-input form-control bg-transparent border-0 fs-6 p-2" value="email@example.com" readonly="readonly" aria-label="User account">
                         </div>
                     </div>
-                    <div class="input-group row g-3 mb-4">
+
+                    <div class="input-group row g-0 mb-4">
                         <label for="username" class="member-title fs-6 py-2">會員姓名</label>
                         <div class="member-content">
                             <input type="text" id="username" class="member-content-input form-control fs-6 p-2" aria-label="User name">
                         </div>
                     </div>
-                    <div class="input-group row g-3 mb-4">
+
+                    <div class="input-group row g-0 mb-4">
                         <label for="gender" class="member-title fs-6 py-2">會員性別</label>
                         <div class="member-content">
                             <select name="gender" id="gender" class="fs-6 px-3 py-2" aria-label="User gender">
@@ -124,40 +152,96 @@
                             </select>
                         </div>
                     </div>
-                    <div class="input-group row g-3 mb-4">
+
+                    <div class="input-group row g-0 mb-4">
                         <label for="email" class="member-title fs-6 py-2">會員信箱</label>
                         <div class="member-content">
                             <input type="email" id="email" class="member-content-input form-control fs-6 p-2" value="email@example.com" aria-label="User email">
                         </div>
                     </div>
-                    <div class="input-group row g-3 mb-4">
+
+                    <div class="input-group row g-0 mb-4">
                         <label for="cellphone" class="member-title fs-6 py-2">手機號碼</label>
                         <div class="member-content">
                             <input type="text" id="cellphone" class="member-content-input form-control fs-6 p-2" onkeyup="value=value.replace(/[^\d]/g,'') " aria-label="User name">
                         </div>
                     </div>
-                    <div class="input-group row g-3 mb-4">
+
+                    <div class="input-group row g-0 mb-2">
                         <label for="c_country" class="member-title fs-6 py-2">聯絡地址</label>
                         <div class="member-content">
-                            <select name="country" id="c_country" class="member-content-select-2 d-block fs-6 mb-2 px-3 py-2" aria-label="Your contact address country">
+                            <select name="country" id="c_country" class="member-content-2 d-block fs-6 mb-2 p-2" aria-label="Your contact address country">
                                 <option value="Taiwan">台灣及離島</option>
                                 <option value="Japan">日本</option>
                             </select>
-                            <select name="city" id="c_city" class="member-content-select-1 fs-6 mb-2 px-3 py-2" aria-label="Your contact address city">
+                            <select name="city" id="c_city" class="member-content-1 fs-6 mb-2 p-2" aria-label="Your contact address city">
                                 <option value="Kaohsiung">高雄市</option>
                                 <option value="Taipei">台北市</option>
                             </select>
-                            <select name="district" id="c_district" class="member-content-select-1 fs-6 mb-2 px-3 py-2" aria-label="Your contact address district">
+                            <select name="district" id="c_district" class="member-content-1 fs-6 mb-2 p-2" aria-label="Your contact address district">
                                 <option value="Yancheng">鹽埕區</option>
                                 <option value="Zuoying">左營區</option>
                             </select>
-                            <input type="text" id="contactAddress" class="member-content-input form-control fs-6 p-2" placeholder="請輸入地址" aria-label="User email">
+                            <input type="text" id="contactAddress" class="member-content-input form-control fs-6 p-2" placeholder="請輸入地址" aria-label="Your contact address">
                         </div>
                     </div>
-                    <div class="input-group row g-3 mb-4">
-                        <div class="member-content receive-ms">
-                            <label for="receive">
-                            <input type="checkbox" checked="checked" id="receive" class="me-1">我願意收到最新優惠情報</label>
+
+                    <div class="member-content-ms d-flex align-items-center mt-2-5 mb-4">
+                        <input type="checkbox" checked="checked" id="receive" class="me-1">
+                        <label for="receive">我願意收到最新優惠情報</label>
+                    </div>
+
+                    <div class="input-group row g-0 mb-4">
+                        <label for="s_country" class="member-title fs-6 py-2">聯絡地址</label>
+                        <div class="member-content">
+                            <select name="country" id="s_country" class="member-content-2 d-block fs-6 mb-2 p-2" aria-label="Your contact address country">
+                                <option value="Taiwan">台灣及離島</option>
+                                <option value="Japan">日本</option>
+                            </select>
+                            <select name="city" id="s_city" class="member-content-1 fs-6 mb-2 p-2" aria-label="Your contact address city">
+                                <option value="Kaohsiung">高雄市</option>
+                                <option value="Taipei">台北市</option>
+                            </select>
+                            <select name="district" id="s_district" class="member-content-1 fs-6 mb-2 p-2" aria-label="Your contact address district">
+                                <option value="Yancheng">鹽埕區</option>
+                                <option value="Zuoying">左營區</option>
+                            </select>
+                            <input type="text" id="sendAddress" class="member-content-input form-control fs-6 mb-2 p-2" placeholder="請輸入地址" aria-label="send address">
+                        </div>
+                    </div>
+
+                    <div class="member-content member-content-ms mb-7 pb-2">
+                        <div class="member-content-2">
+                            <button class="btn btn-primary w-100">確定修改</button>
+                        </div>
+                    </div>
+                </form>
+                
+                <h3 class="fs-6 fw-bold border-bottom border-light mb-3 pb-2">修改密碼</h3>
+
+                <form action="">
+                    <div class="input-group row g-0 mb-4">
+                        <label for="oldPassword" class="member-title fs-6 py-2">舊密碼</label>
+                        <div class="member-content">
+                            <input type="password" id="oldPassword" class="member-content-input form-control fs-6 p-2" aria-label="Your old password">
+                        </div>
+                    </div>
+                    <div class="input-group row g-0 mb-4">
+                        <label for="newPassword" class="member-title fs-6 py-2">新密碼</label>
+                        <div class="member-content">
+                            <input type="password" id="newPassword" class="member-content-input form-control fs-6 p-2" aria-label="Your new password">
+                        </div>
+                    </div>
+                    <div class="input-group row g-0 mb-4">
+                        <label for="checkPassword" class="member-title fs-6 py-2">確認密碼</label>
+                        <div class="member-content">
+                            <input type="password" id="checkPassword" class="member-content-input form-control fs-6 p-2" aria-label="New password again">
+                        </div>
+                    </div>
+
+                    <div class="member-content member-content-ms mb-7 pb-2">
+                        <div class="member-content-2">
+                            <button class="btn btn-primary w-100">變更密碼</button>
                         </div>
                     </div>
                 </form>
