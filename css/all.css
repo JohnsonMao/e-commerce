@@ -483,6 +483,41 @@ html, body {
   border-color: #000;
 }
 
+.hover-enlarge {
+  -webkit-transition: .2s;
+  transition: .2s;
+  z-index: 1;
+}
+
+.hover-enlarge:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+  -webkit-box-shadow: 5px 5px 20px #333;
+          box-shadow: 5px 5px 20px #333;
+  padding: 5px;
+  margin: -5px;
+}
+
+.hover-enlarge:hover .card-imgFrame::before {
+  -webkit-transform: skewY(45deg) translateY(1000px);
+          transform: skewY(45deg) translateY(1000px);
+}
+
+.hover-enlarge .card-imgFrame::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 50px;
+  background: rgba(255, 255, 255, 0.5);
+  -webkit-transform: skewY(45deg) translateY(-300px);
+          transform: skewY(45deg) translateY(-300px);
+  -webkit-transition: .5s;
+  transition: .5s;
+  z-index: 20;
+}
+
 .active a {
   cursor: default;
 }

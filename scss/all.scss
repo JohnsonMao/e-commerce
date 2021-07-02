@@ -381,6 +381,34 @@ html, body{
         border-color: #000;
     }
 }
+.hover-enlarge{
+    transition: .2s;
+    z-index: 1;
+    &:hover{
+        transform: scale(1.1);
+        box-shadow: 5px 5px 20px #333;
+        padding: 5px;
+        margin: -5px;
+
+        .card-imgFrame::before{
+            transform: skewY(45deg) translateY(1000px);
+        }
+    }
+    .card-imgFrame{
+        &::before{
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 50px;
+            background: rgba(#fff, .5);
+            transform: skewY(45deg) translateY(-300px);
+            transition: .5s;
+            z-index: 20;
+        }
+    }
+}
 .active{
     a{
         cursor: default;
