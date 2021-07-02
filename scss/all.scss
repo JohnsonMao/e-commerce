@@ -385,8 +385,8 @@ html, body{
     transition: .2s;
     z-index: 1;
     &:hover{
-        transform: scale(1.1);
-        box-shadow: 5px 5px 20px #333;
+        transform: scale(1.05);
+        box-shadow: 5px 5px 15px rgba(#000, 0.6);
         padding: 5px;
         margin: -5px;
 
@@ -408,6 +408,65 @@ html, body{
             z-index: 20;
         }
     }
+}
+.a-move-in{
+    ul{
+        position: absolute;
+        bottom: 100px;
+        right: 0;
+        opacity: 0;
+        transition: .5s;
+    }
+    &:hover {
+        ul{
+            bottom: 0;
+            opacity: 1;
+        }
+    }
+}
+@keyframes shake{
+    0%{
+        transform: translate(0);
+    }
+    20%{
+        transform: translate(1px, 1px);
+    }
+    40%{
+        transform: translate(-1px, -1px);
+    }
+    60%{
+        transform: translate(1px, -1px);
+    }
+    80%{
+        transform: translate(-1px, 1px);
+    }
+    100%{
+        transform: translate(0);
+    }
+}
+.hover-shake{
+    display: inline-block;
+    transition: .5s;
+    &:hover{
+        i{
+            animation: shake .5s ease-in;
+        }
+    }
+}
+.soldOut::after{
+    content: 'Sold out';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    color: #fff;
+    font-size: $h4-font-size;
+    font-weight: bold;
+    background: rgba($color: #000, $alpha: 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 .active{
     a{
