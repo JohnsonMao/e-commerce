@@ -1,122 +1,134 @@
 <!DOCTYPE html>
-<html lang="zh">
+<html lang="zh-TW">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>d'Perfume Login</title>
-    <link rel="stylesheet" href="./css/reset.css">
+    <title>d'Perfume</title>
     <!-- CSS -->
-    <link rel="stylesheet" href="./css/login.css">
+    <link rel="stylesheet" href="./css/bootstrap.css">
+    <link rel="stylesheet" href="./css/all.css">
     <!-- Google Icons -->
     <link href="https://fonts.googleapis.com/css2?family=Material+Icons"
       rel="stylesheet">
     <!-- JS -->
     <script src="./js/jquery-3.6.0.min.js"></script>
-    <script src="./js/all.js"></script>
+    <script src="./js/all-bs.js"></script>
 </head>
 <body>
-    <header class="header">
-        <div class="container d-flex justify-content-between align-items-center">
-            <h1 class="logo replaceText"><a href="./index.html">
-                d'Perfume
-            </a></h1>
-            <ul class="headerMenu nav">
-                <li><a href="./shop.html"><i class="material-icons">
-                    store
-                </i>
-                    Product
-                </a></li>
-                <li><a href="#"><i class="material-icons">
-                    person
-                    </i>
-                    log in
-                </a></li>
-                <li><a href="#"><i class="material-icons">
-                    favorite
-                    </i>
-                    Wishlist
-                </a></li>
-                <li><a href="#"><i class="material-icons">
-                    shopping_cart
-                    </i>
-                    Cart<span class="shoppingCart-num">3</span>
-                </a></li>
+    <header class="navbar navbar-expand-md fixed-top bg-white p-0">
+        <div class="container">
+            <h1 class="navbar-brand m-0"><a href="./index.html" class="d-inline-block py-1">
+                <img src="./img/logo.png" alt="d'Perfume">
+                <span class="visible-hidden">d'Perfume</span></a>
+            </h1>
+            <ul class="navbar-toggler nav align-items-center p-0">
+                <li><a href="#" class="position-relative text-gray me-4"><i class="material-icons">shopping_cart</i><span class="shopping-num fs-8 text-white bg-primary border rounded-pill px-1">3</span></a></li>
+                <li>
+                    <button class="btn btn-burger py-4" type="button" aria-label="Toggle navigation">
+                        <div class="btn-burger-icon"></div>
+                    </button>
+                </li>
             </ul>
-            <div class="mobileMenu">
-                <a href="#" class="shoppingCart">
-                    <i class="material-icons">shopping_cart</i>
-                    <span class="shoppingCart-num">3</span>
-                </a>
-                <button class="mobileMenu-btn">
-                    <div class="mobileMenu-btn-burger"></div>
-                </button>
+            <div class="collapse navbar-collapse nav-text-gray mobile_menu flex-grow-0" id="mobile-menu">
+                <ul class="navbar-nav">
+                    <li>
+                    <a class="d-flex justify-content-center align-items-center lh-1 hover-baseline hover-gray-baseline fs-5 p-3" href="./shop.html"><i class="material-icons d-none d-md-block">store</i>Product</a>
+                    </li>
+                    <li class="d-none d-md-block active">
+                    <a class="d-flex justify-content-center align-items-center lh-1 hover-baseline hover-gray-baseline fs-5 p-3" href="./login.html"><i class="material-icons">person</i>log in</a>
+                    </li>
+                    <li>
+                    <a class="d-flex justify-content-center align-items-center lh-1 hover-baseline hover-gray-baseline fs-5 p-3" href="#"><i class="material-icons d-none d-md-block">favorite</i>Wishlist</a>
+                    </li>
+                    <li class="d-none d-md-block">
+                    <a class="d-flex justify-content-center align-items-center lh-1 hover-baseline hover-gray-baseline fs-5 p-3" href="#"><i class="material-icons">shopping_cart</i>Cart<span>(3)</span></a>
+                    </li>
+                    <li class="d-md-none">
+                    <a class="d-flex justify-content-center align-items-center lh-1 fs-5 p-3" href="#">Blog</a>
+                    </li>
+                    <li class="d-md-none">
+                    <a class="d-flex justify-content-center align-items-center lh-1 fs-5 p-3" href="#">Contact</a>
+                    </li>
+                    <li class="d-md-none active">
+                    <a class="d-flex justify-content-center align-items-center lh-1 fs-5 p-3" href="./login.html">log in</a>
+                    </li>
+                </ul>
             </div>
-            <ul class="mobileMenu-list nav">
-                <li><a href="./shop.html">Product</a></li>
-                <li><a href="#">Wishlist</a></li>
-                <li><a href="#">Blog</a></li>
-                <li><a href="#">Contact</a></li>
-                <li><a href="#">log in</a></li>
-            </ul>
         </div>
     </header>
 
     <div class="wrap">
-    
-    <nav class="bg-primary">
-        <ul class="productMenu container nav">
-            <li><a href="#">CHANEL</a></li>
-            <li><a href="#">Jo Malone</a></li>
-            <li><a href="#">Curology</a></li>
-            <li><a href="#">Dior</a></li>
-            <li><a href="#">Chloe</a></li>
-            <li><a href="#">ZARA</a></li>
-        </ul>
+
+    <nav class="bg-primary sticky-top d-none d-md-block p-0">
+        <div class="container">
+            <ul class="nav">
+                <li>
+                <a class="d-flex justify-content-center align-items-center lh-1 hover-baseline hover-white-baseline text-white fs-5 p-3s" href="#">CHANEL</a>
+                </li>
+                <li>
+                <a class="d-flex justify-content-center align-items-center lh-1 hover-baseline hover-white-baseline text-white fs-5 p-3s" href="#">Jo Malone</a>
+                </li>
+                <li>
+                <a class="d-flex justify-content-center align-items-center lh-1 hover-baseline hover-white-baseline text-white fs-5 p-3s" href="#">Curology</a>
+                </li>
+                <li>
+                <a class="d-flex justify-content-center align-items-center lh-1 hover-baseline hover-white-baseline text-white fs-5 p-3s" href="#">Dior</a>
+                </li>
+                <li>
+                <a class="d-flex justify-content-center align-items-center lh-1 hover-baseline hover-white-baseline text-white fs-5 p-3s" href="#">Chole</a>
+                </li>
+                <li>
+                <a class="d-flex justify-content-center align-items-center lh-1 hover-baseline hover-white-baseline text-white fs-5 p-3s" href="#">ZARA</a>
+                </li>
+            </ul>
+        </div>
     </nav>
 
-    <section class="container">
-        <div class="login row">
-            <div class="login-img col-8">
-                <img src="./img/login1.jpg" alt="d'Perfume">
-            </div>
-            <div class="col-4 d-flex flex-column justify-content-center">
-                <h2>Log in</h2>
-                <form action="" class="login-form row">
-                    <label for="user">帳號
-                        <input type="text" id="user" class="user col-12" placeholder="email@example.com">
-                    </label>
-                    <label for="password">密碼
-                        <input type="password" id="password" class="password col-12" placeholder="Password">
-                    </label>
-                    <div class="login-btn d-flex justify-content-between align-items-center">
-                        <a href="./member.html" class="more">忘記密碼</a>
-                        <ul class="d-flex">
-                            <li>
-                                <input type="button" value="註冊" class="btn btn-outline-primary">
-                            </li>
-                            </li>
-                                <input type="button" value="登入" class="btn btn-primary">
-                            </li>
-                        </ul>
-                    </div>
-                </form>
+    <section class="container login-min-h mt-7 mt-md-0">
+        <div class="card border-0">
+            <div class="row">
+                <div class="col-lg-8 col-md-6">
+                    <img src="./img/login1.jpg" class="card-img rounded-0" alt="login img">
+                </div>
+                <div class="col-lg-4 col-md-6 d-flex align-items-center">
+                    <form action="" class="w-100">
+                        <h2 class="fs-2 fw-bold mb-2">Log in</h2>
+                        <label for="user" class="text-black fs-6 py-1">帳號</label>
+                        <input type="text" id="user" class="form-control mb-3 ps-2-5 py-2" placeholder="email@example.com">
+                        <label for="password" class="text-black fs-6 py-1">密碼</label>
+                        <input type="password" id="password" class="form-control mb-6 ps-2-5 py-2" placeholder="Password">
+                        <div class="d-flex justify-content-between align-items-center mt-1">
+                            <a href="./member.html" class="hover-baseline hover-secondary-baseline">忘記密碼</a>
+                            <ul class="d-flex list-style-none">
+                                <li><a href="./member.html" class="btn btn-outline-primary px-3 py-2">註冊</a></li>
+                                <li><a href="./member.html" class="btn btn-primary ms-2 px-3 py-2">登入</a></li>
+                            </ul>
+                        </div>
+                    </form>
+                </div>
             </div>
         </div>
     </section>
 
-    <footer class="footer">
-        <div class="container d-flex align-items-center justify-content-between">
-            <ul class="d-flex align-items-center">
-                <li><h2 class="logo replaceText"><a href="./index.html">
-                d'Persume
-                </a></h2></li>
-                <li><span class="text-light">© 2020. All Rights Reserved.</span></li>
-            </ul>
-            <ul class="footerMenu nav">
-                <li><a href="#">Product</a></li>
-                <li><a href="#">Blog</a></li>
-                <li><a href="#">Contact</a></li>
+    <footer class="navbar navbar-expand-md bg-primary p-0">
+        <div class="container justify-content-md-between justify-content-center">
+            <div class="d-flex align-items-center">
+                <h2 class="navbar-brand"><a href="#" class="d-inline-block py-3">
+                    <img src="./img/logo-white.png" alt="d'Perfume">
+                </a></h2>
+                <span class="text-white fs-7 ms-1 my-4 py-2">&copy; 2020. All Rights Reserved.</span>
+            </div>
+            <ul class="navbar-nav d-none d-md-flex">
+                <li>
+                <a class="text-white lh-1 hover-baseline hover-white-baseline fs-5 p-lg-5 p-4" href="./shop.html">Product</a>
+                </li>
+                <li>
+                <a class="text-white lh-1 hover-baseline hover-white-baseline fs-5 p-lg-5 p-4" href="#">Blog</a>
+                </li>
+                <li>
+                <a class="text-white lh-1 hover-baseline hover-white-baseline fs-5 p-lg-5 p-4" href="#">Contact</a>
+                </li>
             </ul>
         </div>
     </footer>

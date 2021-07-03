@@ -109,6 +109,12 @@ html, body{
 .p-3s{
     padding: 14px;
 }
+.position-absolute-md-end{
+    @include media-breakpoint-up(md){
+        position: absolute;
+        right: 0;
+    }
+}
 .banner{
     background: url('../img/index1.jpg') no-repeat;
     background-size: cover;
@@ -140,12 +146,12 @@ html, body{
     }
 }
 .mobile_menu{
-    @include media-breakpoint-down(md) {
+    @include media-breakpoint-down(md){
         position: absolute;
         top: 100%;
         left: 0;
         width: 100%;
-        height: calc(100vh - 56px);
+        height: 100vh;
         background: rgba($gray, 0.5);
         a{
             border-top: 1px solid #fff;
@@ -179,10 +185,12 @@ html, body{
     opacity: 1;
 
     .modal-content{
-    transform: translateY(0); 
+        pointer-events: auto;
+        transform: translateY(0); 
     }
 }
 .modal-content {
+    pointer-events: none;
     transform: translateY(-50px);
     transition: .3s;
 }
@@ -360,28 +368,6 @@ html, body{
         width: calc(100% - 32px);
     }
 }
-.footerMenu{
-    .hover-baseline::after{
-        left: 30px;
-        @include media-breakpoint-down(lg){
-            left: 20px;
-        }
-    }
-    .hover-baseline:hover:after{
-        width: calc(100% - 60px);
-        @include media-breakpoint-down(lg){
-            width: calc(100% - 40px);
-        }
-    }
-}
-.productMenu{
-    .hover-baseline::after{
-        left: 14px;
-    }
-    .hover-baseline:hover:after{
-        width: calc(100% - 28px);
-    }
-}
 .hover-gray-baseline{
     &::after{
         border-color: $gray;
@@ -417,7 +403,7 @@ html, body{
         margin: -5px;
 
         .card-imgFrame::before{
-            transform: skewY(45deg) translateY(1000px);
+            transform: skewY(45deg) translateY(400px);
         }
     }
     .card-imgFrame{
@@ -430,7 +416,7 @@ html, body{
             height: 50px;
             background: rgba(#fff, .5);
             transform: skewY(45deg) translateY(-300px);
-            transition: .5s;
+            transition: .2s linear;
             z-index: 20;
         }
     }

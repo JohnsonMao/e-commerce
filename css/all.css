@@ -150,6 +150,13 @@ html, body {
   padding: 14px;
 }
 
+@media (min-width: 768px) {
+  .position-absolute-md-end {
+    position: absolute;
+    right: 0;
+  }
+}
+
 .banner {
   background: url("../img/index1.jpg") no-repeat;
   background-size: cover;
@@ -185,7 +192,7 @@ html, body {
     top: 100%;
     left: 0;
     width: 100%;
-    height: calc(100vh - 56px);
+    height: 100vh;
     background: rgba(141, 141, 141, 0.5);
   }
   .mobile_menu a {
@@ -230,11 +237,13 @@ html, body {
 }
 
 .modal.show .modal-content {
+  pointer-events: auto;
   -webkit-transform: translateY(0);
           transform: translateY(0);
 }
 
 .modal-content {
+  pointer-events: none;
   -webkit-transform: translateY(-50px);
           transform: translateY(-50px);
   -webkit-transition: .3s;
@@ -475,34 +484,6 @@ html, body {
   width: calc(100% - 32px);
 }
 
-.footerMenu .hover-baseline::after {
-  left: 30px;
-}
-
-@media (max-width: 991.98px) {
-  .footerMenu .hover-baseline::after {
-    left: 20px;
-  }
-}
-
-.footerMenu .hover-baseline:hover:after {
-  width: calc(100% - 60px);
-}
-
-@media (max-width: 991.98px) {
-  .footerMenu .hover-baseline:hover:after {
-    width: calc(100% - 40px);
-  }
-}
-
-.productMenu .hover-baseline::after {
-  left: 14px;
-}
-
-.productMenu .hover-baseline:hover:after {
-  width: calc(100% - 28px);
-}
-
 .hover-gray-baseline::after {
   border-color: #8D8D8D;
 }
@@ -539,8 +520,8 @@ html, body {
 }
 
 .hover-enlarge:hover .card-imgFrame::before {
-  -webkit-transform: skewY(45deg) translateY(1000px);
-          transform: skewY(45deg) translateY(1000px);
+  -webkit-transform: skewY(45deg) translateY(400px);
+          transform: skewY(45deg) translateY(400px);
 }
 
 .hover-enlarge .card-imgFrame::before {
@@ -553,8 +534,8 @@ html, body {
   background: rgba(255, 255, 255, 0.5);
   -webkit-transform: skewY(45deg) translateY(-300px);
           transform: skewY(45deg) translateY(-300px);
-  -webkit-transition: .5s;
-  transition: .5s;
+  -webkit-transition: .2s linear;
+  transition: .2s linear;
   z-index: 20;
 }
 
