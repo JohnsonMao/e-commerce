@@ -201,6 +201,46 @@ html, body {
   right: -30%;
 }
 
+.modal {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  pointer-events: none;
+  opacity: 0;
+  z-index: 1000;
+  -webkit-transition: .3s;
+  transition: .3s;
+}
+
+.modal.show {
+  pointer-events: auto;
+  opacity: 1;
+}
+
+.modal.show .modal-content {
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
+}
+
+.modal-content {
+  -webkit-transform: translateY(-50px);
+          transform: translateY(-50px);
+  -webkit-transition: .3s;
+  transition: .3s;
+}
+
 .card-imgFrame {
   position: relative;
   overflow: hidden;

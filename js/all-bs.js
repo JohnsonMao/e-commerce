@@ -8,11 +8,11 @@ $(document).ready(function(){
 
     // modal
     $('.add-shopping').click(function(){
-        $('.modal-shopping').addClass('show');
+        $('#modal-shopping').addClass('show');
     });
 
     $('.add-favorite').click(function(){
-        $('.modal-favorite').addClass('show');
+        $('#modal-favorite').addClass('show');
     });
 
     $('.modal-close').click(function(){

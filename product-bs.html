@@ -85,6 +85,21 @@
         </div>
     </nav>
 
+    <div class="modal fade modal-close" id="modal-shopping">
+        <div class="modal-dialog w-50 modal-dialog-centered">
+        <div class="modal-content text-center border-0 py-3">
+            <h3 class="text-primary fs-5">已加入購物車</h3>
+        </div>
+        </div>
+    </div>
+    <div class="modal fade modal-close" id="modal-favorite">
+        <div class="modal-dialog w-50 modal-dialog-centered">
+        <div class="modal-content text-center border-0 py-3">
+            <h3 class="text-primary fs-5">已加入我的收藏</h3>
+        </div>
+        </div>
+    </div>
+
     <section class="container">
         <div class="row gy-6 position-relative">
             <div class="col-md-8">
@@ -105,10 +120,10 @@
                             <button class="btn btn-arrow rounded-0 translate-middle-x lh-1 p-0" type="button"><i class="material-icons inc">arrow_drop_down</i></button>
                         </li>
                     </ul>
-                    <button class="col-6 btn btn-primary fs-6" type="button">加入購物車</button>
+                    <button class="add-shopping col-6 btn btn-primary fs-6" type="button">加入購物車</button>
                 </form>
                 <ul class="d-flex list-style-none mb-4">
-                    <li><a href="#" class="d-flex align-items-center hover-baseline hover-secondary-baseline text-black fs-6"><i class="material-icons text-primary">favorite</i>加入我的收藏</a></li>
+                    <li><a href="#" class="add-favorite d-flex align-items-center hover-baseline hover-secondary-baseline text-black fs-6"><i class="material-icons text-primary">favorite</i>加入我的收藏</a></li>
                 </ul>
                 <h2 class="fs-6 fw-bold mt-9 mb-2">商品購買須知</h2>
                 <p class="m-0">產品因拍攝關係顏色可能略有差異，實際以廠商出貨為主。</p>
@@ -134,17 +149,6 @@
             </div>
         </div>
     </section>
-
-    <div class="modal modal-shopping modal-close">
-        <div class="modal-content">
-            <h3>已加入購物車</h3>
-        </div>
-    </div>
-    <div class="modal modal-favorite modal-close">
-        <div class="modal-content">
-            <h3>已加入我的收藏</h3>
-        </div>
-    </div>
 
     <footer class="navbar navbar-expand-md bg-primary p-0">
         <div class="container justify-content-md-between justify-content-center">

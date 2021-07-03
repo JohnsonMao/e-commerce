@@ -31,7 +31,7 @@
                 </li>
             </ul>
             <div class="collapse navbar-collapse nav-text-gray mobile_menu flex-grow-0" id="mobile-menu">
-                <ul class="navbar-nav">
+                <ul class="navbar-nav siteMenu">
                     <li>
                     <a class="d-flex justify-content-center align-items-center lh-1 hover-baseline hover-gray-baseline fs-5 p-3" href="#"><i class="material-icons d-none d-md-block">store</i>Product</a>
                     </li>
@@ -59,6 +59,21 @@
     </header>
 
     <div class="wrap">
+
+        <div class="modal fade modal-close" id="modal-shopping">
+            <div class="modal-dialog w-50 modal-dialog-centered">
+            <div class="modal-content text-center border-0 py-3">
+                <h3 class="text-primary fs-5">已加入購物車</h3>
+            </div>
+            </div>
+        </div>
+        <div class="modal fade modal-close" id="modal-favorite">
+            <div class="modal-dialog w-50 modal-dialog-centered">
+            <div class="modal-content text-center border-0 py-3">
+                <h3 class="text-primary fs-5">已加入我的收藏</h3>
+            </div>
+            </div>
+        </div>
 
     <section class="banner h-100">
         <div class="container h-100">
@@ -162,8 +177,8 @@
                             <p class="card-text fs-6 mb-0">NT$1,380<span class="text-gray ms-2"><del>NT$1,580</del></span></p>
                         </div>
                         <ul class="nav p-0">
-                            <li><a href="#" class="text-info hover-shake px-1"><i class="material-icons">favorite</i></a></li>
-                            <li><a href="#" class="text-info hover-shake px-1"><i class="material-icons">shopping_cart</i></a></li>
+                            <li><a href="#" class="add-favorite text-info hover-shake px-1"><i class="material-icons">favorite</i></a></li>
+                            <li><a href="#" class="add-shopping text-info hover-shake px-1"><i class="material-icons">shopping_cart</i></a></li>
                         </ul>
                     </div>
                 </li>
@@ -178,8 +193,8 @@
                             <p class="card-text fs-6 mb-0">NT$1,580</p>
                         </div>
                         <ul class="nav p-0">
-                            <li><a href="#" class="text-info hover-shake px-1"><i class="material-icons">favorite</i></a></li>
-                            <li><a href="#" class="text-info hover-shake px-1"><i class="material-icons">shopping_cart</i></a></li>
+                            <li><a href="#" class="add-favorite text-info hover-shake px-1"><i class="material-icons">favorite</i></a></li>
+                            <li><a href="#" class="add-shopping text-info hover-shake px-1"><i class="material-icons">shopping_cart</i></a></li>
                         </ul>
                     </div>
                 </li>
@@ -194,25 +209,14 @@
                             <p class="card-text fs-6 mb-0">NT$1,580</p>
                         </div>
                         <ul class="nav p-0">
-                            <li><a href="#" class="text-info hover-shake px-1"><i class="material-icons">favorite</i></a></li>
-                            <li><a href="#" class="text-info hover-shake px-1"><i class="material-icons">shopping_cart</i></a></li>
+                            <li><a href="#" class="add-favorite text-info hover-shake px-1"><i class="material-icons">favorite</i></a></li>
+                            <li><a href="#" class="add-shopping text-info hover-shake px-1"><i class="material-icons">shopping_cart</i></a></li>
                         </ul>
                     </div>
                 </li>
             </ul>
         </div>
     </section>
-
-    <div class="modal modal-shopping modal-close">
-        <div class="modal-content">
-            <h3>已加入購物車</h3>
-        </div>
-    </div>
-    <div class="modal modal-favorite modal-close">
-        <div class="modal-content">
-            <h3>已加入我的收藏</h3>
-        </div>
-    </div>
     
     <section class="container">
         <div class="card border-0">
