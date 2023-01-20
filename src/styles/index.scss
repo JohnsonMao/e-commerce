@@ -1,0 +1,28 @@
+@import './variables';
+@import './reset';
+@import './mixin';
+
+.color-primary {
+    background: $primary;
+}
+.color-secondary {
+    background: $secondary;
+}
+.color-success {
+    background: $success;
+}
+.color-info {
+    background: $info;
+}
+.color-warning {
+    background: $warning;
+}
+.color-danger {
+    background: $danger;
+}
+.color-light {
+    background: $light;
+}
+.color-dark {
+    background: $dark;
+}
