@@ -1,0 +1,66 @@
+.btn {
+	@include button-size($btn-padding, $btn-font-size, $btn-border-radius);
+	display: inline-block;
+	line-height: $line-height-base;
+	border: $btn-border-width solid transparent;
+	box-shadow: $btn-box-shadow;
+	white-space: nowrap;
+	transition: $btn-transition;
+	cursor: pointer;
+
+	&.disabled {
+		cursor: not-allowed;
+		opacity: $btn-disabled-opacity;
+		box-shadow: none;
+
+		> * {
+			pointer-events: none;
+		}
+	}
+}
+
+.btn-lg {
+	@include button-size(
+		$btn-padding-lg,
+		$btn-font-size-lg,
+		$btn-border-radius-lg
+	);
+}
+
+.btn-sm {
+	@include button-size(
+		$btn-padding-sm,
+		$btn-font-size-sm,
+		$btn-border-radius-sm
+	);
+}
+
+.btn-primary {
+	@include button-variant($primary, $primary, $white);
+}
+
+.btn-secondary {
+	@include button-variant($secondary, $secondary, $white);
+}
+
+.btn-danger {
+	@include button-variant($danger, $danger, $white);
+}
+
+.btn-link {
+	color: $btn-link-color;
+	text-decoration: $link-decoration;
+	box-shadow: none;
+
+	&:hover,
+	&:focus,
+	&.focus {
+		color: $btn-link-hover-color;
+		text-decoration: $link-hover-decoration;
+	}
+
+	&.disabled {
+		color: $btn-link-disable-color;
+		pointer-events: none;
+	}
+}
