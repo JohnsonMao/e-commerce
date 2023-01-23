@@ -1,18 +1,9 @@
 import React from 'react';
 import { classNames } from '../../utils';
 
-export enum ButtonSize {
-	Default = 'default',
-	Large = 'lg',
-	Small = 'sm'
-}
+type ButtonSize = 'default' | 'lg' | 'sm';
 
-export enum ButtonVariant {
-	Primary = 'primary',
-	Secondary = 'secondary',
-	Danger = 'danger',
-	Link = 'link'
-}
+type ButtonVariant = 'primary' | 'secondary' | 'danger' | 'link';
 
 interface BaseButtonProps {
 	className: string;
@@ -29,17 +20,21 @@ export type ButtonProps = Partial<
 		React.ButtonHTMLAttributes<HTMLElement>
 >;
 
-const Button: React.FC<ButtonProps> = (props) => {
-	const { variant, size, disabled, children, className, ...restProps } =
-		props;
-
+const Button: React.FC<ButtonProps> = ({
+	variant,
+	size,
+	disabled,
+	children,
+	className,
+	...restProps
+}) => {
 	const classes = classNames('btn', className, {
 		[`btn-${variant}`]: variant,
 		[`btn-${size}`]: size,
 		disabled
 	});
 
-	if (variant === ButtonVariant.Link) {
+	if (variant === 'link') {
 		return (
 			<a className={classes} {...restProps}>
 				{children}
@@ -55,7 +50,7 @@ const Button: React.FC<ButtonProps> = (props) => {
 
 Button.defaultProps = {
 	disabled: false,
-	variant: ButtonVariant.Primary
+	variant: 'primary'
 };
 
 export default Button;

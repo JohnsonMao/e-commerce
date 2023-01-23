@@ -1,5 +1,5 @@
 import { render } from '@testing-library/react';
-import Button, { ButtonVariant, ButtonSize } from './Button';
+import Button from '../';
 
 /**
  * @vitest-environment jsdom
@@ -20,11 +20,7 @@ describe('Test Button component', () => {
 	it('should render the primary large button component and className test', () => {
 		const btnText = 'Primary Button';
 		const wrapper = render(
-			<Button
-				variant={ButtonVariant.Primary}
-				size={ButtonSize.Large}
-				className="test"
-			>
+			<Button variant="primary" size="lg" className="test">
 				{btnText}
 			</Button>
 		);
@@ -42,7 +38,7 @@ describe('Test Button component', () => {
 		const btnText = "I'm link";
 		const href = '#';
 		const wrapper = render(
-			<Button variant={ButtonVariant.Link} href={href}>
+			<Button variant="link" href={href}>
 				{btnText}
 			</Button>
 		);
@@ -59,11 +55,7 @@ describe('Test Button component', () => {
 	it('should render the secondary small button component and disabled is true', () => {
 		const btnText = "I'm disable";
 		const wrapper = render(
-			<Button
-				variant={ButtonVariant.Secondary}
-				size={ButtonSize.Small}
-				disabled={true}
-			>
+			<Button variant="secondary" size="sm" disabled={true}>
 				{btnText}
 			</Button>
 		);
