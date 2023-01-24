@@ -1,41 +1,24 @@
-import Button from './components/Button';
-import Menu, { MenuItem } from './components/Menu';
+import Menu, { MenuItem, SubMenu } from './components/Menu';
 
 function App() {
 	return (
 		<>
 			<Menu>
-				{
-					[1, 2, 3].map((n, i) => (
-						<MenuItem key={i}>Menu {n}</MenuItem>
-					))
-				}
+				<MenuItem>Menu 1</MenuItem>
+				<SubMenu title="Menu 2">
+					<MenuItem>Menu 2-1</MenuItem>
+					<MenuItem>Menu 2-2</MenuItem>
+				</SubMenu>
+				<MenuItem>Menu 3</MenuItem>
 			</Menu>
-			<Menu mode='vertical'>
-				{
-					[4, 5, 6].map((n, i) => (
-						<MenuItem key={i}>Menu {n}</MenuItem>
-					))
-				}
+			<Menu mode='vertical' defaultOpenSubMenu={['1']}>
+				<MenuItem>Menu 4</MenuItem>
+				<SubMenu title="Menu 5">
+					<MenuItem>Menu 5-1</MenuItem>
+					<MenuItem>Menu 5-2</MenuItem>
+				</SubMenu>
+				<MenuItem>Menu 6</MenuItem>
 			</Menu>
-			<Button variant="primary" size="lg">
-				Hello world
-			</Button>
-			<Button variant="secondary">
-				Hello world
-			</Button>
-			<Button variant="danger" size="sm">
-				Hello world
-			</Button>
-			<Button disabled={true}>
-				Hello world
-			</Button>
-			<Button variant="link">
-				Hello world
-			</Button>
-			<Button variant="link" disabled={true}>
-				Hello world
-			</Button>
 		</>
 	);
 }

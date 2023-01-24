@@ -106,3 +106,9 @@ $menu-item-padding: .5rem 1rem !default;
 $menu-item-active-color: $primary !default;
 $menu-item-active-border-width: 2px !default;
 $menu-item-disabled-color: $disabled !default;
+
+$sub-menu-box-shadow: 0 0 4px rgba($black, .3) !default;
+$sub-menu-border-radius: $border-radius !default;
+$sub-menu-background-color: $white !default;
+$sub-menu-hover-color: $primary !default;
+$sub-menu-disabled-color: $disabled !default;

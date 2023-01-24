@@ -22,6 +22,7 @@
 		"no-param-reassign": "off",
 		"no-underscore-dangle": "off",
 		"object-curly-newline": "off",
+		"no-mixed-spaces-and-tabs": "off",
 		"comma-dangle": ["error", "never"],
 		"quotes": [2, "single", { "avoidEscape": true }]
 	}

@@ -1,14 +1,14 @@
 import React, { useContext } from 'react';
 import { classNames } from '../../utils';
-import { MenuContext } from './Menu';
+import { MenuContext, SelectCallback } from './Menu';
 
 export interface MenuItemProps {
-	index?: number;
+	index?: string;
 	disabled?: boolean;
 	className?: string;
 	style?: React.CSSProperties;
 	children?: React.ReactNode;
-	onSelect?: (selectIndex: number) => void;
+	onSelect?: SelectCallback;
 }
 
 const MenuItem: React.FC<MenuItemProps> = ({
@@ -24,7 +24,7 @@ const MenuItem: React.FC<MenuItemProps> = ({
 		active: context.index === index
 	});
 	const handleClick = () => {
-		if (context.onSelect && !disabled && typeof index === 'number') {
+		if (context.onSelect && !disabled && typeof index === 'string') {
 			context.onSelect(index);
 		}
 	};
