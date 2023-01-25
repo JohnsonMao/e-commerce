@@ -32,6 +32,17 @@ $light: $gray-100 !default;
 $dark: $gray-800 !default;
 $disabled: $gray-500 !default;
 
+$theme-colors: (
+	'primary': $primary,
+	'secondary': $secondary,
+	'success': $success,
+	'info': $info,
+	'warning': $warning,
+	'danger': $danger,
+	'light': $light,
+	'dark': $dark
+);
+
 $font-family-sans-serif: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
 	'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji',
 	'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji' !default;
@@ -100,14 +111,14 @@ $btn-link-disable-color: $disabled !default;
 
 $menu-border-width: $border-width !default;
 $menu-border-color: $border-color !default;
-$menu-transition: color .15s ease-in-out, border-color .15s ease-in-out !default;
+$menu-transition: color 0.15s ease-in-out, border-color 0.15s ease-in-out !default;
 
-$menu-item-padding: .5rem 1rem !default;
+$menu-item-padding: 0.5rem 1rem !default;
 $menu-item-active-color: $primary !default;
 $menu-item-active-border-width: 2px !default;
 $menu-item-disabled-color: $disabled !default;
 
-$sub-menu-box-shadow: 0 0 4px rgba($black, .3) !default;
+$sub-menu-box-shadow: 0 0 4px rgba($black, 0.3) !default;
 $sub-menu-border-radius: $border-radius !default;
 $sub-menu-background-color: $white !default;
 $sub-menu-hover-color: $primary !default;
