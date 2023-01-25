@@ -22,19 +22,6 @@ const generateMenu = (props: MenuProps) => (
 	</Menu>
 );
 
-const createStyleFile = () => {
-	const style = document.createElement('style');
-	style.innerHTML = `
-		.sub-menu {
-			display: none;
-		}
-		.opened .sub-menu {
-			display: block;
-		}
-	`;
-	return style;
-};
-
 describe('Test Menu & MenuItem component', () => {
 	const onSelect = vi.fn();
 	let wrapper: RenderResult,
@@ -49,7 +36,6 @@ describe('Test Menu & MenuItem component', () => {
 				onSelect
 			})
 		);
-		wrapper.container.append(createStyleFile());
 		menuEl = wrapper.getByTestId('test-menu');
 		activeEl = wrapper.getByText('Default active');
 		disabledEl = wrapper.getByText('Disabled');
@@ -88,7 +74,7 @@ describe('Test Menu & MenuItem component', () => {
 	});
 
 	it('should show dropdown items when hover on horizontal SubMenu', async () => {
-		expect(wrapper.queryByText('Dropdown-1')).not.toBeVisible();
+		expect(wrapper.queryByText('Dropdown-1')).toBeNull();
 		const dropdownEl = wrapper.getByText('Dropdown');
 		fireEvent.mouseEnter(dropdownEl);
 		await waitFor(() => {
@@ -98,11 +84,11 @@ describe('Test Menu & MenuItem component', () => {
 		expect(onSelect).toHaveBeenCalledWith('3-0');
 		fireEvent.mouseLeave(dropdownEl);
 		await waitFor(() => {
-			expect(wrapper.queryByText('Dropdown-1')).not.toBeVisible();
+			expect(wrapper.queryByText('Dropdown-1')).toBeNull();
 		});
 	});
 
-	it('should show dropdown items when click on vertical mode SubMenu', () => {
+	it('should show dropdown items when click on vertical mode SubMenu', async () => {
 		cleanup();
 		wrapper = render(
 			generateMenu({
@@ -110,18 +96,21 @@ describe('Test Menu & MenuItem component', () => {
 				onSelect
 			})
 		);
-		wrapper.container.append(createStyleFile());
-		expect(wrapper.queryByText('Dropdown-2')).not.toBeVisible();
+		expect(wrapper.queryByText('Dropdown-2')).toBeNull();
 		const dropdownEl = wrapper.getByText('Dropdown');
 		fireEvent.click(dropdownEl);
-		expect(wrapper.queryByText('Dropdown-2')).toBeVisible();
+		await waitFor(() => {
+			expect(wrapper.queryByText('Dropdown-2')).toBeVisible();
+		})
 		fireEvent.click(wrapper.getByText('Dropdown-2'));
 		expect(onSelect).toHaveBeenCalledWith('3-1');
 		fireEvent.click(dropdownEl);
-		expect(wrapper.queryByText('Dropdown-2')).not.toBeVisible();
+		await waitFor(() => {
+			expect(wrapper.queryByText('Dropdown-2')).toBeNull();
+		});
 	})
 
-	it('should show dropdown items default opened on vertical mode SubMenu', () => {
+	it('should show dropdown items default opened on vertical mode SubMenu', async () => {
 		cleanup();
 		wrapper = render(
 			generateMenu({
@@ -129,10 +118,11 @@ describe('Test Menu & MenuItem component', () => {
 				defaultOpenSubMenu: ['3']
 			})
 		);
-		wrapper.container.append(createStyleFile());
 		expect(wrapper.queryByText('Dropdown-2')).toBeVisible();
 		const dropdownEl = wrapper.getByText('Dropdown');
 		fireEvent.click(dropdownEl);
-		expect(wrapper.queryByText('Dropdown-2')).not.toBeVisible();
+		await waitFor(() => {
+			expect(wrapper.queryByText('Dropdown-2')).toBeNull();
+		})
 	})
 });

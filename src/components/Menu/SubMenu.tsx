@@ -1,7 +1,8 @@
-import React, { useState, useContext } from 'react';
+import React, { useState, useContext, useRef } from 'react';
 import { classNames } from '../../utils';
 import { MenuContext } from './Menu';
 import { MenuItemProps } from './MenuItem';
+import Transition from '../Transition';
 import Icon from '../Icon';
 
 export interface SubMenuProps {
@@ -26,6 +27,8 @@ const SubMenu: React.FC<SubMenuProps> = ({
 		active: context.index === index,
 		opened: subMenuOpen
 	});
+	const nodeRef = useRef(null);
+
 	const handleClick = (e: React.MouseEvent) => {
 		e.preventDefault();
 		setSubMenuOpen(!subMenuOpen);
@@ -34,6 +37,7 @@ const SubMenu: React.FC<SubMenuProps> = ({
 		e.preventDefault();
 		setSubMenuOpen(toggle);
 	};
+
 	const clickEvent =
 		context.mode === 'vertical'
 			? {
@@ -47,6 +51,7 @@ const SubMenu: React.FC<SubMenuProps> = ({
 					onMouseLeave: (e: React.MouseEvent) => handleMouse(e, false)
 			  }
 			: {};
+
 	const renderChildren = () => {
 		const childrenEl = React.Children.map(children, (child, i) => {
 			const el = child as React.FunctionComponentElement<MenuItemProps>;
@@ -62,7 +67,18 @@ const SubMenu: React.FC<SubMenuProps> = ({
 			}
 		});
 
-		return <ul className="sub-menu">{childrenEl}</ul>;
+		return (
+			<Transition
+				nodeRef={nodeRef}
+				in={subMenuOpen}
+				timeout={300}
+				animationName="zoom-in-top"
+			>
+				<ul ref={nodeRef} className="sub-menu">
+					{childrenEl}
+				</ul>
+			</Transition>
+		);
 	};
 
 	return (

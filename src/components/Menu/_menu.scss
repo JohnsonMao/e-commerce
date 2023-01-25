@@ -33,6 +33,7 @@
 		flex-direction: column;
 		border-bottom: 0px;
 		border-right: $menu-border-width solid $menu-border-color;
+		width: 160px;
 
 		.menu-item {
 			border-bottom: 0px;
@@ -69,12 +70,7 @@
 	}
 }
 
-.opened .sub-menu {
-	display: block;
-}
 .sub-menu {
-    display: none;
-
 	&-title {
 		display: flex;
 		align-items: center;

@@ -24,9 +24,46 @@
 		color: $hover-color;
 	}
 
-    &.disabled {
+	&.disabled {
 		background: $background;
 		border-color: $border;
 		color: $color;
-    }
+	}
 }
+
+@mixin zoom-animation(
+	$direction: 'top',
+	$scaleStart: scaleY(0),
+	$scaleEnd: scaleY(1),
+	$origin: top
+) {
+	.zoom-in-#{$direction} {
+		&-enter,
+		&-exit {
+			&-active {
+				transform-origin: $origin;
+				transition: transform 0.3s cubic-bezier(0.23, 1, 0.32, 1) 0.1s,
+					opacity 0.3s cubic-bezier(0.23, 1, 0.32, 1) 0.1s;
+			}
+		}
+
+		&-enter {
+			opacity: 0;
+			transform: $scaleStart;
+
+			&-active {
+				opacity: 1;
+				transform: $scaleEnd;
+			}
+		}
+
+		&-exit {
+			opacity: 1;
+
+			&-active {
+				opacity: 0;
+				transform: $scaleStart;
+			}
+		}
+	}
+} ;
