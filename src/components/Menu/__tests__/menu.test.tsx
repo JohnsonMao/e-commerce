@@ -28,7 +28,7 @@ const createStyleFile = () => {
 		.sub-menu {
 			display: none;
 		}
-		.sub-menu.opened {
+		.opened .sub-menu {
 			display: block;
 		}
 	`;
