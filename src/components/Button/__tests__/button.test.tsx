@@ -11,9 +11,9 @@ describe('Test Button component', () => {
 		const wrapper = render(<Button>{btnText}</Button>);
 		const btn = wrapper.baseElement.children[0].children[0];
 
-		expect(btn).toBeTruthy();
+		expect(btn).toBeVisible();
 		expect(btn.innerHTML).toBe(btnText);
-		expect(Object.values(btn.classList)).toContain('btn');
+		expect(btn).toHaveClass('btn');
 		expect(btn.tagName).toBe('BUTTON');
 	});
 
@@ -25,13 +25,9 @@ describe('Test Button component', () => {
 			</Button>
 		);
 		const btn = wrapper.baseElement.children[0].children[0];
-		const classList = Object.values(btn.classList);
 
 		expect(btn.innerHTML).toBe(btnText);
-		expect(classList).toContain('btn');
-		expect(classList).toContain('btn-primary');
-		expect(classList).toContain('btn-lg');
-		expect(classList).toContain('test');
+		expect(btn).toHaveClass('btn btn-primary btn-lg test');
 	});
 
 	it('should render the link button component', () => {
@@ -43,13 +39,11 @@ describe('Test Button component', () => {
 			</Button>
 		);
 		const btn = wrapper.baseElement.children[0].children[0];
-		const classList = Object.values(btn.classList);
 
 		expect(btn.innerHTML).toBe(btnText);
 		expect(btn.tagName).toBe('A');
 		expect(btn.getAttribute('href')).toBe(href);
-		expect(classList).toContain('btn');
-		expect(classList).toContain('btn-link');
+		expect(btn).toHaveClass('btn btn-link');
 	});
 
 	it('should render the secondary small button component and disabled is true', () => {
@@ -60,13 +54,9 @@ describe('Test Button component', () => {
 			</Button>
 		);
 		const btn = wrapper.baseElement.children[0].children[0];
-		const classList = Object.values(btn.classList);
 
 		expect(btn.innerHTML).toBe(btnText);
-		expect(btn.hasAttribute('disabled')).toBeTruthy();
-		expect(classList).toContain('btn');
-		expect(classList).toContain('btn-secondary');
-		expect(classList).toContain('btn-sm');
-		expect(classList).toContain('disabled');
+		expect(btn).toBeDisabled();
+		expect(btn).toHaveClass('btn btn-secondary btn-sm disabled');
 	});
 });
