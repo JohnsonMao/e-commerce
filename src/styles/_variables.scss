@@ -25,7 +25,7 @@ $green: green !default;
 $primary: $blue !default;
 $secondary: $gray-500 !default;
 $success: $limegreen !default;
-$info: $skyblue !default;
+$info: darken($skyblue, 15) !default;
 $warning: $gold !default;
 $danger: $red !default;
 $light: $gray-100 !default;
@@ -100,7 +100,8 @@ $btn-font-size-lg: $font-size-lg !default;
 $btn-border-radius-lg: $border-radius-lg !default;
 
 $btn-border-width: $border-width !default;
-$btn-transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out !default;
+$btn-transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+	border-color 0.15s ease-in-out, transform 0.15s ease-in-out !default;
 
 $btn-box-shadow: inset -1px -1px 0 rgba($black, 0.2) !default;
 $btn-disabled-opacity: 0.65 !default;
