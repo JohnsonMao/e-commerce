@@ -27,6 +27,10 @@
 		opacity: $btn-disabled-opacity;
 		box-shadow: none;
 
+		&:active {
+			transform: scale(1);
+		}
+
 		> * {
 			pointer-events: none;
 		}
