@@ -2,6 +2,8 @@ import React from 'react';
 import { classNames } from '../../utils';
 import { IconBaseProps } from 'react-icons/lib';
 import { FaAngleDown } from 'react-icons/fa';
+import { IoCalendarOutline } from 'react-icons/io5';
+import { FiSearch } from 'react-icons/fi';
 
 export type ThemeProps =
 	| 'primary'
@@ -13,10 +15,12 @@ export type ThemeProps =
 	| 'dark'
 	| 'light';
 
-const IconType = { FaAngleDown };
+const Icons = { FaAngleDown, IoCalendarOutline, FiSearch };
+
+export type IconType = keyof typeof Icons;
 
 export interface IconProps extends IconBaseProps {
-    icon: keyof typeof IconType;
+    icon: IconType;
 	theme?: ThemeProps;
 }
 
@@ -24,7 +28,7 @@ const Icon: React.FC<IconProps> = ({ icon, className, theme, ...restProps }) => 
 	const classes = classNames('icon', className, {
 		[`icon-${theme}`]: theme
 	});
-    const Icon = IconType[icon];
+    const Icon = Icons[icon];
 
 	return <Icon className={classes} {...restProps} />;
 };

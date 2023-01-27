@@ -12,7 +12,6 @@ const Template: ComponentStory<typeof Button> = (args) => <Button {...args} />;
 
 export const Vartant = Template.bind({});
 Vartant.args = {
-	variant: 'primary',
     children: 'Button',
     onClick: action('click')
 };

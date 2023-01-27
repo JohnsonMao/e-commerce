@@ -124,3 +124,24 @@ $sub-menu-border-radius: $border-radius !default;
 $sub-menu-background-color: $white !default;
 $sub-menu-hover-color: $primary !default;
 $sub-menu-disabled-color: $disabled !default;
+
+$input-padding: 0.375rem 0.75rem !default;
+$input-font-size: $font-size-base !default;
+$input-border-radius: $border-radius !default;
+
+$input-padding-sm: 0.25rem 0.5rem !default;
+$input-font-size-sm: $font-size-sm !default;
+$input-border-radius-sm: $border-radius-sm !default;
+
+$input-padding-lg: 0.5rem 1rem !default;
+$input-font-size-lg: $font-size-lg !default;
+$input-border-radius-lg: $border-radius-lg !default;
+
+$input-border-color: $gray-800 !default;
+$input-border-width: $border-width !default;
+$input-outline-width: 2px !default;
+$input-outline-color: rgba($primary, .3) !default;
+
+$input-disabled-opacity: 0.65 !default;
+$input-appand-background-color: $gray-100 !default;
+$input-prepend-background-color: $gray-100 !default;

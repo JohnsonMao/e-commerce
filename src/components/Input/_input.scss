@@ -1,0 +1,56 @@
+.input {
+	&-wrapper {
+		display: inline-flex;
+		border: $input-border-width solid $input-border-color;
+		border-radius: $input-border-radius;
+		line-height: $line-height-base;
+        overflow: hidden;
+
+		&:focus-within {
+			outline: $input-outline-width solid $input-outline-color;
+		}
+		&.disabled {
+			pointer-events: none;
+			opacity: $input-disabled-opacity;
+		}
+	}
+
+	&-inner {
+		@include size($input-padding, $input-font-size);
+		border: 0;
+
+		&:focus {
+			outline: 0;
+		}
+	}
+
+	&-prepand {
+		@include size($input-padding, $input-font-size);
+		background-color: $input-prepend-background-color;
+	}
+
+	&-append {
+		@include size($input-padding, $input-font-size);
+		background-color: $input-appand-background-color;
+	}
+
+	&-lg {
+		.input {
+            &-prepand,
+            &-append,
+			&-inner {
+				@include size($input-padding-lg, $input-font-size-lg);
+			}
+		}
+	}
+
+	&-sm {
+		.input {
+            &-prepand,
+            &-append,
+			&-inner {
+				@include size($input-padding-sm, $input-font-size-sm);
+			}
+		}
+	}
+}
