@@ -1,9 +1,7 @@
 import React from 'react';
 import { classNames } from '../../utils';
 import { IconBaseProps } from 'react-icons/lib';
-import { FaAngleDown } from 'react-icons/fa';
-import { IoCalendarOutline } from 'react-icons/io5';
-import { FiSearch } from 'react-icons/fi';
+import * as FA from 'react-icons/fa';
 
 export type ThemeProps =
 	| 'primary'
@@ -15,7 +13,7 @@ export type ThemeProps =
 	| 'dark'
 	| 'light';
 
-const Icons = { FaAngleDown, IoCalendarOutline, FiSearch };
+const Icons = FA;
 
 export type IconType = keyof typeof Icons;
 
