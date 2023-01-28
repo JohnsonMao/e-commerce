@@ -24,7 +24,7 @@
 		}
 	}
 
-	&-prepand {
+	&-prepend {
 		@include size($input-padding, $input-font-size);
 		background-color: $input-prepend-background-color;
 	}
@@ -36,7 +36,7 @@
 
 	&-lg {
 		.input {
-            &-prepand,
+            &-prepend,
             &-append,
 			&-inner {
 				@include size($input-padding-lg, $input-font-size-lg);
@@ -46,7 +46,7 @@
 
 	&-sm {
 		.input {
-            &-prepand,
+            &-prepend,
             &-append,
 			&-inner {
 				@include size($input-padding-sm, $input-font-size-sm);

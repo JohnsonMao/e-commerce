@@ -12,6 +12,12 @@ const Template: ComponentStory<typeof Input> = (args) => <Input {...args} />;
 
 export const Type = Template.bind({});
 Type.args = {
-    prepand: 'Google',
+    prepend: 'Google',
     append: '.com'
+};
+
+export const Size = Template.bind({});
+Size.args = {
+    size: 'sm',
+    prepend: '$'
 };

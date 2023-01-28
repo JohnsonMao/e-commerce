@@ -18,7 +18,7 @@ Vartant.args = {
 
 export const Size = Template.bind({});
 Size.args = {
-	size: 'default',
+	size: 'sm',
     children: 'Button',
     onClick: action('click')
 };

@@ -7,9 +7,8 @@ interface BaseInputProps {
 	className: string;
 	disabled: boolean;
 	size: InputSize;
-	prepand: string | React.ReactNode;
+	prepend: string | React.ReactNode;
 	append: string | React.ReactNode;
-	onChange: (e: HTMLInputElement) => void;
 }
 
 export type InputProps = Partial<
@@ -21,7 +20,7 @@ const Input: React.FC<InputProps> = ({
 	disabled,
 	className,
 	append,
-	prepand,
+	prepend,
 	style,
 	...restProps
 }) => {
@@ -30,18 +29,17 @@ const Input: React.FC<InputProps> = ({
 
 	const classes = classNames(baseClass('-wrapper'), className, {
 		[`input-${size}`]: size,
-		'input-group': prepand || append,
 		disabled
 	});
 
 	if (Object.hasOwn(restProps, 'value')) {
 		delete restProps.defaultValue;
-		restProps.value = restProps.value ?? ''
+		restProps.value = restProps.value ?? '';
 	}
 
 	return (
-		<div className={classes} style={style}>
-			{prepand && <div className={baseClass('-prepand')}>{prepand}</div>}
+		<div className={classes} style={style} data-testid="test-input">
+			{prepend && <div className={baseClass('-prepend')}>{prepend}</div>}
 			<input
 				className={baseClass('-inner')}
 				disabled={disabled}
