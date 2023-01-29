@@ -20,11 +20,13 @@ export type IconType = keyof typeof Icons;
 export interface IconProps extends IconBaseProps {
     icon: IconType;
 	theme?: ThemeProps;
+	spin?: boolean;
 }
 
-const Icon: React.FC<IconProps> = ({ icon, className, theme, ...restProps }) => {
+const Icon: React.FC<IconProps> = ({ icon, className, theme, spin, ...restProps }) => {
 	const classes = classNames('icon', className, {
-		[`icon-${theme}`]: theme
+		[`icon-${theme}`]: theme,
+		spin
 	});
     const Icon = Icons[icon];
 

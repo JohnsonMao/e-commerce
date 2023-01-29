@@ -19,10 +19,10 @@ const Template: ComponentStory<typeof Menu> = (args) => (
 	</Menu>
 );
 
-export const Horizontal = Template.bind({});
-Horizontal.args = {};
+export const HorizontalMenu = Template.bind({});
+HorizontalMenu.args = {};
 
-export const Vertical = Template.bind({});
-Vertical.args = {
+export const VerticalMenu = Template.bind({});
+VerticalMenu.args = {
 	mode: 'vertical'
 };
