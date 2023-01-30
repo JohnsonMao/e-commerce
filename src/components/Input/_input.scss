@@ -18,6 +18,7 @@
 	&-inner {
 		@include size($input-padding, $input-font-size);
 		border: 0;
+		width: 100%;
 
 		&:focus {
 			outline: 0;

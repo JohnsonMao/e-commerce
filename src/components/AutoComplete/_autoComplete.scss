@@ -1,0 +1,32 @@
+.ac {
+	position: relative;
+
+	&__input {
+		width: 100%;
+	}
+	&__suggestion {
+		position: absolute;
+		left: 0;
+		top: 100%;
+		width: 100%;
+		max-height: 12rem;
+		background: $auto-complete-dropdown-background-color;
+		border-radius: $auto-complete-dropdown-border-radius;
+		box-shadow: $auto-complete-dropdown-box-shadow;
+		overflow: auto;
+
+		&__loading {
+			padding: .5rem;
+			display: flex;
+			justify-content: center;
+		}
+
+		&__item {
+			&:hover,
+			&-hightlighted {
+				background: $primary;
+				color: $white;
+			}
+		}
+	}
+}

@@ -29,9 +29,8 @@ const Template: ComponentStory<typeof AutoComplete> = (args) => (
 
 export const FetchSuggestions = Template.bind({});
 FetchSuggestions.args = {
-	data: chineseZodiac,
-	fetchSuggestions(str, data) {
-		return data.filter((zodiac) =>
+	fetchSuggestions(str) {
+		return chineseZodiac.filter((zodiac) =>
 			zodiac.value.toLocaleLowerCase().includes(str.toLocaleLowerCase())
 		);
 	},
@@ -60,11 +59,13 @@ Promise.args = {
 		return fetch(`https://api.github.com/search/users?q=${str}`)
 			.then((res) => res.json())
 			.then(({ items }) =>
-				items.slice(0, 10).map((item: GithubUser) => ({
-					value: item.login,
-					...item
-				}))
-			);
+				Array.isArray(items)
+					? items.slice(0, 10).map((item: GithubUser) => ({
+							value: item.login,
+							...item
+					  }))
+					: []
+			).catch(() => []);
 	},
 	renderOption(item) {
 		const user = item as unknown as DataSourceType<GithubUser>;
@@ -73,11 +74,12 @@ Promise.args = {
 				style={{
 					display: 'flex',
 					alignItems: 'center',
+					height: '2rem',
 					padding: '.25rem'
 				}}
 			>
 				<img
-					style={{ width: '30px', borderRadius: '50%' }}
+					style={{ height: '100%', borderRadius: '50%' }}
 					src={user.avatar_url}
 					alt={user.value + ' avatar'}
 				/>
