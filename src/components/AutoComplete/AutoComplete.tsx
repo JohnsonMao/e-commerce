@@ -3,6 +3,7 @@ import React, {
 	useEffect,
 	ChangeEvent,
 	KeyboardEvent,
+	MouseEventHandler,
 	useRef
 } from 'react';
 import Input, { InputProps } from '../Input';
@@ -11,29 +12,21 @@ import { useDebounce, useClickOutside } from '../../hooks';
 import { classNames } from '../../utils';
 import Transition from '../Transition';
 
-interface DataSourceObject {
+export interface DataSourceType {
 	value: string;
 }
 
-export type DataSourceType<T = Record<string, unknown>> = T & DataSourceObject;
-
-export interface AutoCompleteProps extends Omit<InputProps, 'onSelect'> {
-	fetchSuggestions: (
-		str: string
-	) => DataSourceType[] | Promise<DataSourceType[]>;
-	onSelect?: (item: DataSourceType) => void;
-	renderOption?: (item: DataSourceType) => React.ReactElement;
+export interface AutoCompleteProps<T> extends Omit<InputProps, 'onSelect'> {
+	fetchSuggestions: (str: string) => T[] | Promise<T[]>;
+	onSelect?: (item: T) => void;
+	renderOption?: (item: T) => React.ReactElement;
 }
 
-const AutoComplete: React.FC<AutoCompleteProps> = ({
-	value,
-	renderOption,
-	fetchSuggestions,
-	onSelect,
-	...restProps
-}) => {
+function AutoComplete<T extends DataSourceType>(props: AutoCompleteProps<T>) {
+	const { value, renderOption, fetchSuggestions, onSelect, ...restProps } =
+		props;
 	const [inputValue, setInputValue] = useState(value as string);
-	const [suggestions, setSuggestions] = useState<DataSourceType[]>([]);
+	const [suggestions, setSuggestions] = useState<T[]>([]);
 	const [loading, setLoading] = useState(false);
 	const [highlightIndex, setHightlightIndex] = useState(-1);
 	const isPromise = useRef(true);
@@ -97,18 +90,18 @@ const AutoComplete: React.FC<AutoCompleteProps> = ({
 		}
 	};
 
-	const handleSelect = (item: DataSourceType) => {
+	const handleSelect = (item: T) => {
 		triggerSearch.current = false;
 		setInputValue(item.value);
 		setSuggestions([]);
 		if (onSelect) onSelect(item);
 	};
 
-	const handleMouseMove = () => {
+	const handleMouseMove: MouseEventHandler<HTMLUListElement> = (e) => {
 		setHightlightIndex(-1);
 	};
 
-	const renderTemplate = (item: DataSourceType) => (
+	const renderTemplate = (item: T) => (
 		<>{renderOption ? renderOption(item) : item.value}</>
 	);
 
@@ -129,7 +122,7 @@ const AutoComplete: React.FC<AutoCompleteProps> = ({
 		});
 
 	return (
-		<div className="ac" ref={componentRef}>
+		<div className="ac" ref={componentRef} data-testid="test-auto-complete">
 			<Input
 				className="ac__input"
 				value={inputValue}
@@ -159,6 +152,6 @@ const AutoComplete: React.FC<AutoCompleteProps> = ({
 			</Transition>
 		</div>
 	);
-};
+}
 
 export default AutoComplete;

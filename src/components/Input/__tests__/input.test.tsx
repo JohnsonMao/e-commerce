@@ -35,6 +35,7 @@ describe('Test Input component', () => {
 		expect(wrapperEl.tagName).toBe('DIV');
 		expect(wrapperEl.children.length).toBe(1);
 		expect(inputEl).toHaveClass('input-inner');
+		expect(inputEl.tagName).toEqual('INPUT');
 	});
 
 	it('should render the large input component and className test', async () => {
