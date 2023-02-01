@@ -7,7 +7,7 @@ import {
 	IGithubUser,
 	testFetchSuggestions,
 	testAsyncFetchSuggestions
-} from '../__tests__/autoComplete.test';
+} from '../const';
 
 export default {
 	title: 'Example/AutoComplete',

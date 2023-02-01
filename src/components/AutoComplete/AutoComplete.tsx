@@ -3,7 +3,6 @@ import React, {
 	useEffect,
 	ChangeEvent,
 	KeyboardEvent,
-	MouseEventHandler,
 	useRef
 } from 'react';
 import Input, { InputProps } from '../Input';
@@ -97,8 +96,10 @@ function AutoComplete<T extends DataSourceType>(props: AutoCompleteProps<T>) {
 		if (onSelect) onSelect(item);
 	};
 
-	const handleMouseMove: MouseEventHandler<HTMLUListElement> = (e) => {
-		setHightlightIndex(-1);
+	const handleHover = (index: number) => {
+		if (index !== highlightIndex) {
+			setHightlightIndex(index);
+		}
 	};
 
 	const renderTemplate = (item: T) => (
@@ -113,8 +114,10 @@ function AutoComplete<T extends DataSourceType>(props: AutoCompleteProps<T>) {
 			return (
 				<li
 					key={index}
+					data-key={index}
 					className={classes}
 					onClick={() => handleSelect(item)}
+					onMouseMove={() => handleHover(index)}
 				>
 					{renderTemplate(item)}
 				</li>
@@ -136,11 +139,7 @@ function AutoComplete<T extends DataSourceType>(props: AutoCompleteProps<T>) {
 				timeout={300}
 				animationName="zoom-in-top"
 			>
-				<ul
-					ref={nodeRef}
-					className="ac__suggestion"
-					onMouseMove={handleMouseMove}
-				>
+				<ul ref={nodeRef} className="ac__suggestion">
 					{loading ? (
 						<li className="ac__suggestion__loading">
 							<Icon icon="FaSpinner" theme="primary" spin />
