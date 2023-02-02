@@ -29,7 +29,7 @@ function AutoComplete<T extends DataSourceType>(props: AutoCompleteProps<T>) {
 	const [loading, setLoading] = useState(false);
 	const [highlightIndex, setHightlightIndex] = useState(-1);
 	const isPromise = useRef(true);
-	const debounceValue = useDebounce(inputValue, isPromise.current ? 200 : 0);
+	const debounceValue = useDebounce(inputValue, isPromise.current ? 500 : 0);
 	const triggerSearch = useRef(false);
 	const componentRef = useRef<HTMLDivElement>(null);
 	const nodeRef = useRef(null);
@@ -42,9 +42,7 @@ function AutoComplete<T extends DataSourceType>(props: AutoCompleteProps<T>) {
 
 			isPromise.current = result instanceof Promise;
 			if (result instanceof Promise) {
-				setLoading(true);
 				result.then((data) => {
-					setLoading(false);
 					setSuggestions(data);
 				});
 			} else {
@@ -54,11 +52,13 @@ function AutoComplete<T extends DataSourceType>(props: AutoCompleteProps<T>) {
 			setSuggestions([]);
 		}
 		setHightlightIndex(-1);
+		setLoading(false);
 	}, [debounceValue, fetchSuggestions]);
 
 	const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
 		triggerSearch.current = true;
 		setInputValue(e.target.value.trim());
+		setLoading(true);
 	};
 
 	const highlight = (index: number) => {

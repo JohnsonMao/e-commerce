@@ -5,7 +5,7 @@
 }
 
 .spin {
-	animation: spin 1s infinite;
+	animation: spin 1s infinite steps(8);
 }
 
 @keyframes spin {

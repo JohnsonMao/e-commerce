@@ -149,3 +149,8 @@ $input-prepend-background-color: $gray-100 !default;
 $auto-complete-dropdown-box-shadow: 0 0 4px rgba($black, 0.3) !default;
 $auto-complete-dropdown-border-radius: $border-radius !default;
 $auto-complete-dropdown-background-color: $white !default;
+
+$upload-list-error-color: $danger !default;
+$upload-list-item-transition: .5s cubic-bezier(0.55, 0, 0.1, 1) !default;
+$upload-list-item-font-size: 14px !default;
+$upload-list-item-line-height: $line-height-base !default;
