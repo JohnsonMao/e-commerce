@@ -1,9 +1,3 @@
-@each $key, $value in $theme-colors {
-	.icon-#{$key} {
-		color: $value;
-	}
-}
-
 .spin {
 	animation: spin 1s infinite steps(8);
 }

@@ -11,7 +11,8 @@ export type ThemeProps =
 	| 'warning'
 	| 'danger'
 	| 'dark'
-	| 'light';
+	| 'light'
+	| 'gray';
 
 const Icons = FA;
 
@@ -25,7 +26,7 @@ export interface IconProps extends IconBaseProps {
 
 const Icon: React.FC<IconProps> = ({ icon, className, theme, spin, ...restProps }) => {
 	const classes = classNames('icon', className, {
-		[`icon-${theme}`]: theme,
+		[`color-${theme}`]: theme,
 		spin
 	});
     const Icon = Icons[icon];

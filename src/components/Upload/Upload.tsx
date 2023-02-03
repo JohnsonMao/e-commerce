@@ -1,7 +1,8 @@
 import { useRef, ChangeEvent, useState } from 'react';
-import axios from 'axios';
+import axios, { AxiosRequestConfig } from 'axios';
 import UploadList from './UploadList';
-import Button from '../Button';
+import Dragger from './Dragger';
+import Progress from '../Progress';
 
 export type UploadFileStatus = 'ready' | 'uploading' | 'success' | 'error';
 
@@ -13,17 +14,25 @@ export interface UploadFile {
 	percent?: number;
 	raw?: File;
 	response?: unknown;
-	error?: Error;
+	error?: unknown;
 }
 
 export interface UploadProps<T> {
 	action: string;
-	label?: string;
+	name?: string;
+	accept?: string;
+	multiple?: boolean;
+	drag?: boolean;
+	data?: Record<string, string | Blob>;
+	children: React.ReactNode;
+	headers?: AxiosRequestConfig<FormData>['headers'];
+	withCredentials?: boolean;
+	className?: string;
 	defaultFileList?: UploadFile[];
 	beforeUpload?: (file: File) => boolean | Promise<File>;
-	onProgress?: (percentage: number, file: File) => void;
-	onSuccess?: (data: T, file: File) => void;
-	onError?: (error: Error, file: File) => void;
+	onProgress?: (percentage: number, file: UploadFile) => void;
+	onSuccess?: (data: T, file: UploadFile) => void;
+	onError?: (error: unknown, file: UploadFile) => void;
 	onChange?: (files: FileList | null) => void;
 	onRemove?: (file: UploadFile) => void;
 }
@@ -31,8 +40,16 @@ export interface UploadProps<T> {
 function Upload<T = unknown>(props: UploadProps<T>) {
 	const {
 		action,
-		label,
+		accept,
+		multiple,
+		name,
+		data,
+		drag,
+		headers,
+		withCredentials,
 		defaultFileList,
+		className,
+		children,
 		beforeUpload,
 		onProgress,
 		onSuccess,
@@ -40,6 +57,7 @@ function Upload<T = unknown>(props: UploadProps<T>) {
 		onChange,
 		onRemove
 	} = props;
+
 	const [fileList, setFileList] = useState<UploadFile[]>(
 		defaultFileList || []
 	);
@@ -63,7 +81,7 @@ function Upload<T = unknown>(props: UploadProps<T>) {
 		}
 	};
 
-	const post = (file: File) => {
+	const post = async (file: File) => {
 		const formData = new FormData();
 		const _file: UploadFile = {
 			uid: `upload-${Date.now()}-${Math.round(Math.random() * 1000)}`,
@@ -74,49 +92,53 @@ function Upload<T = unknown>(props: UploadProps<T>) {
 			raw: file
 		};
 
-		setFileList([_file, ...fileList]);
-		formData.append(file.name, file);
+		setFileList((preList) => [_file, ...preList]);
+		formData.append(name || 'file', file);
 
-		// fetch(action, {
-		// 	method: 'POST',
-		// 	body: formData
-		// })
-		// 	.then((res) => res.json())
-		// 	.then((data) => console.log(data));
+		if (data) {
+			Object.keys(data).forEach((key) => {
+				formData.append(key, data[key]);
+			});
+		}
 
-		axios
-			.post(action, formData, {
+		try {
+			const response = await axios.post(action, formData, {
 				headers: {
+					...headers,
 					'Content-Type': 'multipart/form-data'
 				},
+				withCredentials,
 				onUploadProgress: (e) => {
 					const percentage = Math.round(
 						(e.loaded / (e.total || 1)) * 100
 					);
+					console.log(e);
 					if (percentage < 100) {
 						updateFileList(_file, {
 							percent: percentage,
 							status: 'uploading'
 						});
 
-						if (onProgress) onProgress(percentage, file);
+						if (onProgress) onProgress(percentage, _file);
 					}
 				}
-			})
-			.then((res) => {
-				updateFileList(_file, {
-					status: 'success',
-					response: res.data
-				});
-				if (onSuccess) onSuccess(res.data, file);
-			})
-			.catch((error: Error) => {
-				updateFileList(_file, {
-					status: 'error',
-					error
-				});
-				if (onError) onError(error, file);
 			});
+
+			updateFileList(_file, {
+				status: 'success',
+				percent: 100,
+				response: response.data
+			});
+			if (onSuccess) onSuccess(response.data, _file);
+		} catch (error) {
+			console.error(error);
+			updateFileList(_file, {
+				status: 'error',
+				percent: 0,
+				error
+			});
+			if (onError) onError(error, _file);
+		}
 	};
 
 	const uploadFile = (files: FileList) => {
@@ -160,21 +182,29 @@ function Upload<T = unknown>(props: UploadProps<T>) {
 	};
 
 	return (
-		<div className={baseClass('-wrapper')} data-testid="test-upload">
-			<Button onClick={handleClick}>{label}</Button>
-			<input
-				type="file"
-				ref={fileInputRef}
-				onChange={handleFileChange}
-				className={baseClass('-input')}
-			/>
+		<div className={className} data-testid="test-upload">
+			<div className={baseClass('-action')} onClick={handleClick}>
+				{drag ? (
+					<Dragger onFile={uploadFile}>{children}</Dragger>
+				) : (
+					children
+				)}
+				<input
+					type="file"
+					ref={fileInputRef}
+					onChange={handleFileChange}
+					className={baseClass('-input')}
+					accept={accept}
+					multiple={multiple}
+				/>
+			</div>
 			<UploadList fileList={fileList} onRemove={handleRemove} />
 		</div>
 	);
 }
 
 Upload.defaultProps = {
-	label: '上傳檔案'
+	name: 'file'
 };
 
 export default Upload;

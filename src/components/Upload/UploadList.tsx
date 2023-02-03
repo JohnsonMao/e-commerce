@@ -1,6 +1,7 @@
 import React from 'react';
 import { UploadFile } from './Upload';
 import Icon from '../Icon';
+import Progress from '../Progress';
 
 export interface UploadListProps {
 	fileList: UploadFile[];
@@ -16,35 +17,40 @@ const UploadList: React.FC<UploadListProps> = (props) => {
 	return (
 		<ul className={baseClass()}>
 			{fileList.map((item) => (
-				<li className={baseClass('__item')} key={item.uid}>
-					<span
-						className={baseClass(
-							'__item__name',
-							`__item__name--${item.status}`
-						)}
-					>
-						<Icon
-							icon="FaFileAlt"
-							theme={
-								item.status === 'error' ? 'danger' : 'secondary'
-							}
-						/>
-						{item.name}
-					</span>
-					<span className={baseClass('__item__status')}>
-						{item.status === 'uploading' && (
-							<Icon icon="FaSpinner" theme="primary" spin />
-						)}
-						{item.status === 'success' && (
-							<Icon icon="FaCheckCircle" theme="success" />
-						)}
-						{item.status === 'error' && (
-							<Icon icon="FaTimesCircle" theme="danger" />
-						)}
-					</span>
-					<span className={baseClass('__item__action')}>
-						<Icon icon="FaTimes" onClick={() => onRemove(item)} />
-					</span>
+				<li key={item.uid}>
+					<div className={baseClass('__wrapper')}>
+						<span
+							className={baseClass(
+								'__wrapper__name',
+								`__wrapper__name--${item.status}`
+							)}
+						>
+							<Icon
+								icon="FaFileAlt"
+								theme={
+									item.status === 'error' ? 'danger' : 'secondary'
+								}
+							/>
+							{item.name}
+						</span>
+						<span className={baseClass('__wrapper__status')}>
+							{item.status === 'uploading' && (
+								<Icon icon="FaSpinner" theme="primary" spin />
+							)}
+							{item.status === 'success' && (
+								<Icon icon="FaCheckCircle" theme="success" />
+							)}
+							{item.status === 'error' && (
+								<Icon icon="FaTimesCircle" theme="danger" />
+							)}
+						</span>
+						<span className={baseClass('__wrapper__action')}>
+							<Icon icon="FaTimes" onClick={() => onRemove(item)} />
+						</span>
+					</div>
+					{item.status === 'uploading' && (
+						<Progress percent={item.percent || 0} />
+					)}
 				</li>
 			))}
 		</ul>

@@ -1,0 +1,26 @@
+.progress-bar {
+	&__outer {
+		position: relative;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		background: $progress-background;
+		border-radius: $progress-border-radius;
+		overflow: hidden;
+	}
+	&__inner {
+		position: absolute;
+		left: 0;
+		top: 0;
+		height: 100%;
+		border-radius: $progress-border-radius;
+		line-height: 1;
+		transition: $progress-transition;
+	}
+	&__text {
+        position: relative;
+		margin: 0 0.25rem;
+		color: $progress-text-color;
+        mix-blend-mode: difference;
+	}
+}

@@ -1,18 +1,16 @@
 .upload {
-	&-wrapper {
-		display: inline-block;
-	}
 	&-input {
 		display: none;
 	}
 	&-list {
-		&__item {
+		&__wrapper {
 			display: flex;
 			justify-content: space-between;
 			align-items: center;
 			line-height: $upload-list-item-line-height;
 			font-size: $upload-list-item-font-size;
 			transition: $upload-list-item-transition;
+            min-width: 120px;
 			gap: 0.25rem;
 
 			&__name {
@@ -43,6 +41,14 @@
 				display: flex;
 				align-items: center;
 			}
+		}
+	}
+	&-dragger {
+		border: $dragger-border-width dashed $dragger-border-color;
+		border-radius: $dragger-border-radius;
+
+		&.is-dragover {
+			border-color: $dragger-over-border-color;
 		}
 	}
 }

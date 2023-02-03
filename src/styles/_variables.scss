@@ -30,7 +30,7 @@ $warning: $gold !default;
 $danger: $red !default;
 $light: $gray-100 !default;
 $dark: $gray-800 !default;
-$disabled: $gray-500 !default;
+$gray: $gray-500 !default;
 
 $theme-colors: (
 	'primary': $primary,
@@ -40,7 +40,8 @@ $theme-colors: (
 	'warning': $warning,
 	'danger': $danger,
 	'light': $light,
-	'dark': $dark
+	'dark': $dark,
+	'gray': $gray
 );
 
 $font-family-sans-serif: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
@@ -108,7 +109,7 @@ $btn-disabled-opacity: 0.65 !default;
 
 $btn-link-color: $link-color !default;
 $btn-link-hover-color: darken($link-color, 15) !default;
-$btn-link-disable-color: $disabled !default;
+$btn-link-disable-color: $gray !default;
 
 $menu-border-width: $border-width !default;
 $menu-border-color: $border-color !default;
@@ -117,13 +118,13 @@ $menu-transition: color 0.15s ease-in-out, border-color 0.15s ease-in-out !defau
 $menu-item-padding: 0.5rem 1rem !default;
 $menu-item-active-color: $primary !default;
 $menu-item-active-border-width: 2px !default;
-$menu-item-disabled-color: $disabled !default;
+$menu-item-disabled-color: $gray !default;
 
 $sub-menu-box-shadow: 0 0 4px rgba($black, 0.3) !default;
 $sub-menu-border-radius: $border-radius !default;
 $sub-menu-background-color: $white !default;
 $sub-menu-hover-color: $primary !default;
-$sub-menu-disabled-color: $disabled !default;
+$sub-menu-disabled-color: $gray !default;
 
 $input-padding: 0.375rem 0.75rem !default;
 $input-font-size: $font-size-base !default;
@@ -154,3 +155,13 @@ $upload-list-error-color: $danger !default;
 $upload-list-item-transition: .5s cubic-bezier(0.55, 0, 0.1, 1) !default;
 $upload-list-item-font-size: 14px !default;
 $upload-list-item-line-height: $line-height-base !default;
+
+$progress-background: $gray-200 !default;
+$progress-border-radius: $border-radius !default;
+$progress-text-color: $white !default;
+$progress-transition: width .6s ease !default;
+
+$dragger-border-width: $border-width !default;
+$dragger-border-radius: $border-radius !default;
+$dragger-border-color: $gray !default;
+$dragger-over-border-color: $primary !default;
