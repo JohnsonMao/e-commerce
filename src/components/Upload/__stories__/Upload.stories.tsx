@@ -47,6 +47,7 @@ Normal.args = {
 
 export const DropFile = DropFileTemplate.bind({});
 DropFile.args = {
+	action: 'https://run.mocky.io/v3/7ee8a6db-a999-4dfd-99c4-0784f675fd23',
 	drag: true,
 	defaultFileList: [
 		{ uid: '1', name: 'File 1', status: 'ready' },

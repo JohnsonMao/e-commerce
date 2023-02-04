@@ -17,14 +17,14 @@ export interface UploadFile {
 	error?: unknown;
 }
 
-export interface UploadProps<T> {
+export interface UploadProps<T = unknown> {
 	action: string;
 	name?: string;
 	accept?: string;
 	multiple?: boolean;
 	drag?: boolean;
 	data?: Record<string, string | Blob>;
-	children: React.ReactNode;
+	children?: React.ReactNode;
 	headers?: AxiosRequestConfig<FormData>['headers'];
 	withCredentials?: boolean;
 	className?: string;
@@ -101,6 +101,11 @@ function Upload<T = unknown>(props: UploadProps<T>) {
 			});
 		}
 
+		updateFileList(_file, {
+			percent: 0,
+			status: 'uploading'
+		});
+
 		try {
 			const response = await axios.post(action, formData, {
 				headers: {
@@ -112,11 +117,10 @@ function Upload<T = unknown>(props: UploadProps<T>) {
 					const percentage = Math.round(
 						(e.loaded / (e.total || 1)) * 100
 					);
-					console.log(e);
+
 					if (percentage < 100) {
 						updateFileList(_file, {
-							percent: percentage,
-							status: 'uploading'
+							percent: percentage
 						});
 
 						if (onProgress) onProgress(percentage, _file);
@@ -131,7 +135,6 @@ function Upload<T = unknown>(props: UploadProps<T>) {
 			});
 			if (onSuccess) onSuccess(response.data, _file);
 		} catch (error) {
-			console.error(error);
 			updateFileList(_file, {
 				status: 'error',
 				percent: 0,
@@ -193,7 +196,7 @@ function Upload<T = unknown>(props: UploadProps<T>) {
 					type="file"
 					ref={fileInputRef}
 					onChange={handleFileChange}
-					className={baseClass('-input')}
+					style={{ display: 'none' }}
 					accept={accept}
 					multiple={multiple}
 				/>
