@@ -2,6 +2,10 @@ export const isObject = (thing: unknown): thing is Record<string, unknown> => {
 	return typeof thing === 'object' && thing != null && !Array.isArray(thing);
 };
 
+export const hasOwn = (obj: Record<string, unknown>, key: string) => {
+	return Object.prototype.hasOwnProperty.call(obj, key);
+}
+
 export const classNames = (...rest: unknown[]) => {
 	return rest
 		.reduce((r: string[], c) => {

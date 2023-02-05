@@ -1,5 +1,5 @@
 import React from 'react';
-import { classNames } from '../../utils';
+import { classNames, hasOwn } from '../../utils';
 
 type InputSize = 'default' | 'lg' | 'sm';
 
@@ -32,7 +32,7 @@ const Input: React.FC<InputProps> = ({
 		disabled
 	});
 
-	if (Object.hasOwn(restProps, 'value')) {
+	if (hasOwn(restProps, 'value')) {
 		delete restProps.defaultValue;
 		restProps.value = restProps.value ?? '';
 	}
