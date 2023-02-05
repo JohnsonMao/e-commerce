@@ -15,18 +15,15 @@ jobs:
       - name: Checkout 🛎️
         uses: actions/checkout@v3
         
-      - name: Install dependencies
-        run: npm
-
-      - name: Publish to Chromatic 
-        uses: chromaui/action@v1
-        with:
-          projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
-
       - name: Install and Build 🔧
         run: |
           npm install
           npm run build-storybook
+
+      - name: Publish to Chromatic 🚀
+        uses: chromaui/action@v1
+        with:
+          projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
 
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4
