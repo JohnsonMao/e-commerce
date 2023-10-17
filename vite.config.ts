@@ -8,7 +8,7 @@ import react from '@vitejs/plugin-react';
 export default defineConfig(({ mode }) => {
 	const isDev = mode === 'development';
 	return {
-		base: isDev ? '/' : '/scrum_f2e/',
+		base: isDev ? '/' : '/react-ui/',
 		plugins: [react()],
 		server: {
 			host: '0.0.0.0',
